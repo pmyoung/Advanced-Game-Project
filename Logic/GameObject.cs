@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//SERVERSIDE
+//Contains information relating to all game objects (Ships, bullets, planets, etc). 
+//This class is not used alone; It is exteneded by other game objects.
+
 namespace SpaceShip
 {
     class GameObject
