@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//SERVERSIDE
+//Contains player data
+//Modifies player coordinates based on the keys depressed by the player
+
 namespace SpaceShip
 {
     class Player:GameObject
@@ -44,11 +48,12 @@ namespace SpaceShip
           }
           public void rotateLeft()
           {
-
+               //called whenever the player has the 'right' key depressed
               angle -= GameScene.getInstance().getConfig().getRotationRate();
           }
           public void rotateRight()
           {
+               //called whenever the player has the 'left' key depressed
               angle += GameScene.getInstance().getConfig().getRotationRate();
           }
     }
