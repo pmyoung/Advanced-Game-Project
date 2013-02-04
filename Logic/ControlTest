@@ -1,0 +1,12 @@
+//Testing Controls Capture
+            new Control(Control.ControlType.Traditional);
+
+            while (true)
+            {
+                if (Keyboard.IsKeyDown(Key.Escape)) break;
+                System.Threading.Thread.Sleep(55);
+                Console.Clear();
+                Control.getInstance().captureControls();
+                Console.WriteLine(Control.getInstance());
+            }
+   
