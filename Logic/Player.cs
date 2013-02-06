@@ -59,7 +59,13 @@ namespace SpaceShip
           public void fire()
           {
               //called whenever the player has the 'space' key depressed
-              newBullet: 
+              Bullet newBullet;
+              //give the bullet the player's initial speed, plus a component 
+              newBullet.speedX = this.speedX + Math.Sin(this.angle)*GameScene.getInstance().getConfig().getBulletSpeed();
+              newBullet.speedY = this.speedY + Math.Cos(this.angle)*GameScene.getInstance().getConfig().getBulletSpeed();
+              //
+              newBullet.x = this.x + Math.Sin(this.angle)*this.radius
+              newBullet.y = this.y + Math.Cos(this.angle)*this.radius
           }
     }
 }
