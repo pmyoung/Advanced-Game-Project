@@ -12,12 +12,13 @@ namespace SpaceShip
         int mapId;
         int maxPlayers;
         double gravityConstant=5;
-
+        
+        int bulletSpeed=5;
         int maxHealth = 30;
         int accelerationRate = 2;
         int rotationRate = 2;
         double brakeRate = 0.9;
-        int mass = 10;        
+        int mass = 10;
 
         public MatchConfig(int maxPlayers)
         {
