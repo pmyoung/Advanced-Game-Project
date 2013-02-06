@@ -26,7 +26,7 @@ namespace Comp4432_AGP
         {
             // temporary drawing
             this.getSpriteStore().GetSprite(0).Render(spriteBatch, 100, 100, 16, 0.0f, 0.0f, 0, 0);
-            this.store.GetSprite(0).Render(spriteBatch, 200, 100, 16, 1.0f, 0.0f, 0, 0);
+            this.getSpriteStore().GetSprite(0).Render(spriteBatch, 200, 100, 16, 1.0f, 0.0f, 0, 0);
             this.getSpriteStore().GetSprite(0).Render(spriteBatch, 200, 200, 16, 2.0f, 0.0f, 0, 0);
             this.getSpriteStore().GetSprite(0).Render(spriteBatch, 100, 200, 16, 3.0f, 0.0f, 0, 0);
         }// Render
