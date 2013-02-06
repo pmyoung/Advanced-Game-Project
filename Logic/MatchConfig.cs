@@ -75,6 +75,11 @@ namespace SpaceShip
             return this.players;
         }
 
+        public int getBulletSpeed()
+        {
+            return this.bulletSpeed;
+        }
+
         public double getGravityConstant()
         {
             return this.gravityConstant;
