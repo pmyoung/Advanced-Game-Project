@@ -56,5 +56,10 @@ namespace SpaceShip
                //called whenever the player has the 'left' key depressed
               angle += GameScene.getInstance().getConfig().getRotationRate();
           }
+          public void fire()
+          {
+              //called whenever the player has the 'space' key depressed
+              newBullet: 
+          }
     }
 }
