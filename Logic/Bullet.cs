@@ -14,24 +14,18 @@ namespace SpaceShip
     {
         int playerId;
         
-        public Bullet(float bX,float bY,float bSpeedX,float bSpeedY, int playerId)
+        public Bullet(float bX,float bY,float bSpeedX,float bSpeedY, int playerId, int spriteId)
         {
             this.x = bX;
             this.y = bY;
             this.speedX = bSpeedX;
             this.speedY = bSpeedY;
             this.playerId = playerId;
-
+            setSpriteId(spriteId);
             GameScene.getInstance().addNonGravityObject(this);
         }
          
-        public Bullet(int playerId, int spriteId)
-        {
-            this.playerId = playerId;
-            setSpriteId(spriteId);
-        }
-
-      
+          
   	public void outOfBounds()
 	{
 		if ( x < 0 || x > 800 ) 
