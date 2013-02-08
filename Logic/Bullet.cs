@@ -28,21 +28,21 @@ namespace SpaceShip
              y = y + (int) (Math.Cos(angle) * bulletSpeed);
         }
   	public void outOfBounds()
-		{
-			if ( x < 0 || x > 800 ) 
-            { //change these to global variables for map boundary
-				this.destroy();
-			}
-            if (y < 0 || y > 600) 
-            { //change these to global variables for map boundary
-				this.destroy();
-			}
+	{
+		if ( x < 0 || x > 800 ) 
+            	{ //change these to global variables for map boundary
+			this.destroy();
 		}
-		public void hit()
-		{
-			//check collision with players
-            //add score to player whom shot bullet
-            this.destroy();
+            	if (y < 0 || y > 600) 
+            	{ //change these to global variables for map boundary
+			this.destroy();
 		}
+	}
+	public void hit()
+	{
+		//check collision with players
+        	//add score to player whom shot bullet
+        	this.destroy();
+	}
     }
 }
