@@ -12,11 +12,11 @@ namespace SpaceShip
 {
     class Bullet:GameObject
     {
-        int id;
+        int playerId;
          
-        public Bullet(int id, int spriteId)
+        public Bullet(int playerId, int spriteId)
         {
-            this.id = id;
+            this.playerId = playerId;
             setSpriteId(spriteId);
         }
 
