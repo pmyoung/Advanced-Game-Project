@@ -14,12 +14,13 @@ namespace SpaceShip
     {
         int playerId;
         
-        public Bullet(float bX,float bY,float bSpeedX,float bSpeedY)
+        public Bullet(float bX,float bY,float bSpeedX,float bSpeedY, int playerId)
         {
             this.x = bX;
             this.y = bY;
             this.speedX = bSpeedX;
             this.speedY = bSpeedY;
+            this.playerId = playerId;
 
             GameScene.getInstance().addNonGravityObject(this);
         }
@@ -30,13 +31,7 @@ namespace SpaceShip
             setSpriteId(spriteId);
         }
 
-        public void travel()
-        {
-             //will run whenever the game is running and a bullet exist
-             double bulletSpeed = GameScene.getInstance().getConfig().getBulletSpeed();
-             x = x + (int) (Math.Sin(angle) * bulletSpeed);
-             y = y + (int) (Math.Cos(angle) * bulletSpeed);
-        }
+      
   	public void outOfBounds()
 	{
 		if ( x < 0 || x > 800 ) 
