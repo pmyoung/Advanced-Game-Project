@@ -13,6 +13,16 @@ namespace SpaceShip
     class Bullet:GameObject
     {
         int playerId;
+        
+        public Bullet(float bX,float bY,float bSpeedX,float bSpeedY)
+        {
+            this.x = bX;
+            this.y = bY;
+            this.speedX = bSpeedX;
+            this.speedY = bSpeedY;
+
+            GameScene.getInstance().addNonGravityObject(this);
+        }
          
         public Bullet(int playerId, int spriteId)
         {
