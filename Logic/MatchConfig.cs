@@ -155,5 +155,11 @@ namespace SpaceShip.Logic
         static public int rotationRate = 2;
         static public double brakeRate = 0.9;
         static public int mass = 10;
+        
+        static public int windowBoundaryXmin = 0;
+        static public int windowBoundaryXmax = 800;
+        static public int windowBoundaryYmin = 0;
+        static public int windowBoundaryYmax = 600;
+        
     }
 }
