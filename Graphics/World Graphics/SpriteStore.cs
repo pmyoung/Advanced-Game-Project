@@ -29,7 +29,7 @@ namespace GameGraphics
 
             // temporary loading
             spriteDictionary.Add(0, new Sprite(Content.Load<Texture2D>("test"), "Test"));
-            spriteDictionary.Add(1, new Sprite(Content.Load<Texture2D>("ship_test_32x32"), "Ship"));
+            spriteDictionary.Add(1, new Sprite(Content.Load<Texture2D>("ship1_32x32"), "Ship"));
         }// LoadSprites
 
         /*
