@@ -60,25 +60,20 @@ namespace SpaceShip.Logic
             loadMap(fileString);
         }
 
-       private void loadMap(string fileString)
+      private void loadMap(string fileString)
         {
             int index1 = 0, index2 = 0;
+            //Console.WriteLine("Loading Map:");
+            if (((index1 = fileString.IndexOf("<Map")) > -1) && ((index2 = fileString.IndexOf(">")) > -1) && fileString.Contains("</Map"))
+            {
+               
+                string propriety = fileString.Substring(index1, index2 - index1 + 1);
+                fileString = fileString.Remove(index1, index2 - index1 + 1);
+                fileString = fileString.Remove(fileString.IndexOf("</Map>"));
 
-            if (((index1 = fileString.IndexOf("<Map")) > 0) && ((index2 = fileString.IndexOf(">")) > -1))
-            {
-                string propriety = fileString.Remove(index1, index2 - index1 + 1);
                 loadMapPropriety(propriety);
-            }
-            else
-            {
-                //SENT WRONG Map FILE FormatException EVENT
-            }
-            //size of ">" = 1
-            index1 = index2 + 1;
-             if ((index2 = fileString.IndexOf("<\\Map>")) < 0)
-            {
-                string body = fileString.Remove(index1, index2 - index1);
-                loadMapBody(body);
+                loadMapBody(fileString);
+
             }
             else
             {
@@ -88,11 +83,27 @@ namespace SpaceShip.Logic
 
         private void loadMapPropriety(string propriety)
         {
+            //int index1 = 0, index2 = 0;
+            //if ((index1 = propriety.IndexOf("name=")) > 0)
+            //{
+            //    index1 += 5 + 1;
+            //    propriety = propriety.Substring(index1);
+            //    Console.WriteLine("P: " + propriety);
+            //    index2 = propriety.IndexOf(" ");
+               
 
+
+            //    //string name = propriety.Substring(index1
+            //}
+            //else
+            //{
+            //    //SENT WRONG Map FILE FormatException EVENT
+            //}
         }
 
         private void loadMapBody(string body)
         {
+
         }
     }
 }
