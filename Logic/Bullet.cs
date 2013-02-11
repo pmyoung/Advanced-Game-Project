@@ -25,18 +25,19 @@ namespace SpaceShip
             GameScene.getInstance().addNonGravityObject(this);
         }
          
-         private void destroy()
+        private void destroy()
         {
+        	
         }
           
   	public void outOfBounds()
 	{
-		if ( x < 0 || x > 800 ) 
-            	{ //change these to global variables for map boundary
+		if ( x < MatchConfig.windowBoundaryXmin || x > MatchConfig.windowBoundaryXmax ) 
+            	{
 			this.destroy();
 		}
-            	if (y < 0 || y > 600) 
-            	{ //change these to global variables for map boundary
+            	if ( y < MatchConfig.windowBoundaryYmin || y > MatchConfig.windowBoundaryYmax ) 
+            	{
 			this.destroy();
 		}
 	}
