@@ -25,6 +25,9 @@ namespace SpaceShip
             GameScene.getInstance().addNonGravityObject(this);
         }
          
+         private void destroy()
+        {
+        }
           
   	public void outOfBounds()
 	{
