@@ -13,6 +13,7 @@ namespace SpaceShip
     class Player:GameObject
     {
         int id;
+        int reload = 0;
         string name;
  
         public Player(int id, string name, int spriteId)
@@ -31,6 +32,11 @@ namespace SpaceShip
         {
             return this.name;
         }   
+        
+        public void decrementReload()
+        {
+            reload = reload-1;
+        }
 
          public void accelerate()
          {
@@ -59,13 +65,18 @@ namespace SpaceShip
           public void fire()
           {
               //called whenever the player has the 'space' key depressed
+              if (this.reload<1){
+              //If the player isn't currently reloading...
               Bullet newBullet;
-              //give the bullet the player's initial speed, plus a component 
+              //give the bullet the player's initial speed, plus the base bullet speed
               newBullet.speedX = this.speedX + Math.Sin(this.angle)*GameScene.getInstance().getConfig().getBulletSpeed();
               newBullet.speedY = this.speedY + Math.Cos(this.angle)*GameScene.getInstance().getConfig().getBulletSpeed();
-              //
+              //move the bullet to the edge of the player's ship
               newBullet.x = this.x + Math.Sin(this.angle)*this.radius
               newBullet.y = this.y + Math.Cos(this.angle)*this.radius
+              //set the player's reload timer
+              this.reload = GameScene.getInstance().getConfig().getReloadRate();
+              }
           }
     }
 }
