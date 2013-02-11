@@ -94,3 +94,96 @@ namespace SpaceShip
         }
     }
 }
+
+
+
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+//SERVERSIDE
+//Contains information relating to all game objects (Ships, bullets, planets, etc). 
+//This class is not used alone; It is exteneded by other game objects.
+
+namespace SpaceShip.Logic
+{
+    class GameObject
+    {
+        protected float x;
+        protected float y;
+        protected float angle;
+        protected float radius;
+        protected int mass;
+        protected int spriteID;
+
+        protected float speedX;
+        protected float speedY;
+
+        public float getX()
+        {
+            return this.x;
+        }
+
+        public float getY()
+        {
+            return this.y;
+        }
+
+        public float getAngle()
+        {
+            return this.angle;
+        }
+
+        public float getMass()
+        {
+            return this.mass;
+        }
+
+        public float getRadius()
+        {
+            return this.radius;
+        }
+
+        public int getSpriteId()
+        {
+            return this.spriteID;
+        }
+
+        protected void setSpriteId(int sprite)
+        {
+            this.spriteID = sprite;
+        }
+
+        public void updatePosition()
+        {
+            x += speedX;
+            y += speedY;
+        }
+
+        public bool checkCollision(GameObject object2)
+        {
+            float distance = (float)(Math.Sqrt(Math.Pow((this.x - object2.x), 2) + Math.Pow(this.y - object2.y, 2)));
+            if (distance < this.radius + object2.radius) return true;
+            return false;
+        }
+
+        public void calculateGravity()
+        {
+            List<GameObject> objectsG =  MatchConfig.map.getGravityObjects();
+            float G = MatchConfig.gravityConstant;
+
+            foreach (GameObject ob in objectsG)
+            {
+                speedX += (float)((G * ob.mass * this.mass) / Math.Pow(this.x - ob.x, 2));
+                speedY += (float)((G * ob.mass * this.mass) / Math.Pow(this.y - ob.y, 2));
+            }
+        }
+    }
+}
