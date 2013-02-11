@@ -8,95 +8,6 @@ using System.Threading.Tasks;
 //Contains player data
 //Modifies player coordinates based on the keys depressed by the player
 
-namespace SpaceShip
-{
-    class Player:GameObject
-    {
-        int id;
-        int reload = 0;
-        string name;
- 
-        public Player(int id, string name, int spriteId)
-        {
-            this.id = id;
-            this.name = name;
-            setSpriteId(spriteId);
-        }
-
-        public int getId()
-        {
-            return this.id;
-        }
-
-        public string getName()
-        {
-            return this.name;
-        }   
-        
-        public void decrementReload()
-        {
-            reload = reload-1;
-        }
-
-         public void accelerate()
-         {
-             //called whenever the user has 'up' key depressed
-             double accelerationRate = GameScene.getInstance().getConfig().getAccelerationRate();
-             speedX += (int) (Math.Sin(angle) * accelerationRate);
-             speedY += (int) (Math.Cos(angle) * accelerationRate);
-          }
-          public void brake()
-          {
-               //called whenever the user has 'down' key depressed
-              double brakeRate = GameScene.getInstance().getConfig().getBrakeRate();
-              speedX = (int)(speedX * brakeRate);
-              speedX = (int)(speedX * brakeRate);
-          }
-          public void rotateLeft()
-          {
-               //called whenever the player has the 'right' key depressed
-              angle -= GameScene.getInstance().getConfig().getRotationRate();
-          }
-          public void rotateRight()
-          {
-               //called whenever the player has the 'left' key depressed
-              angle += GameScene.getInstance().getConfig().getRotationRate();
-          }
-          public void fire()
-          {
-              //called whenever the player has the 'space' key depressed
-              if (this.reload<1){
-              //If the player isn't currently reloading...
-              Bullet newBullet;
-              //give the bullet the player's initial speed, plus the base bullet speed
-              newBullet.speedX = this.speedX + Math.Sin(this.angle)*GameScene.getInstance().getConfig().getBulletSpeed();
-              newBullet.speedY = this.speedY + Math.Cos(this.angle)*GameScene.getInstance().getConfig().getBulletSpeed();
-              //move the bullet to the edge of the player's ship
-              newBullet.x = this.x + Math.Sin(this.angle)*this.radius
-              newBullet.y = this.y + Math.Cos(this.angle)*this.radius
-              //set the player's reload timer
-              this.reload = GameScene.getInstance().getConfig().getReloadRate();
-              }
-          }
-    }
-}
-
-
-
-
-
-
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-//SERVERSIDE
-//Contains player data
-//Modifies player coordinates based on the keys depressed by the player
-
 namespace SpaceShip.Logic
 {
     class Player : GameObject
@@ -105,6 +16,7 @@ namespace SpaceShip.Logic
         int bulletId = 0;
         int invisible;
         string name;
+        int reload = 0;
 
         
 
@@ -123,6 +35,12 @@ namespace SpaceShip.Logic
         public string getName()
         {
             return this.name;
+        }
+        
+        public void decrementReload()
+        {
+            //Should be called on each iteration of the main game loop
+            this.reload = this.reload-1;
         }
 
         public void accelerate()
@@ -149,14 +67,19 @@ namespace SpaceShip.Logic
         }
         public void fire()
           {
-              //give the bullet the player's initial speed, plus a component 
-              float bSpeedX = (float)(this.speedX + Math.Sin(this.angle) * MatchConfig.bulletSpeed);
-              float bSpeedY = (float)(this.speedY + Math.Cos(this.angle) * MatchConfig.bulletSpeed);
-              //
+              
+            //called whenever the player has the 'space' key depressed
+              if (this.reload<1){
+              //If the player isn't currently reloading...
+              //give the bullet the player's initial speed, plus the base bullet speed
+              bSpeedX = (float)(this.speedX + Math.Sin(this.angle) * MatchConfig.bulletSpeed);
+              bSpeedY = (float)(this.speedY + Math.Cos(this.angle) * MatchConfig.bulletSpeed);
+              //move the bullet to the edge of the player's ship
               float bX = (float)(this.x + Math.Sin(this.angle) * this.radius);
               float bY = (float)(this.y + Math.Cos(this.angle) * this.radius);
-
-              //called whenever the player has the 'space' key depressed
+              //set the player's reload timer
+              this.reload = GameScene.getInstance().getConfig().getReloadRate();
+              //create a new bullet object
               new Bullet(bX,bY,bSpeedX,bSpeedY, id, bulletId);
           }
 
