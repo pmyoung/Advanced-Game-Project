@@ -74,22 +74,40 @@ namespace SpaceShip
 
         public bool checkCollision(GameObject object2)
         {
+            //Checks if two objects have collided, returning true if they have or false if they haven't
+            //Collision detection is based upon the radius of the objects and the distance between them
             double distance = Math.Sqrt(Math.Pow((this.x - object2.x), 2) + Math.Pow(this.y - object2.y, 2));
             if (distance < this.radius + object2.radius) return true;
             return false;
         }
 
+      public void outOfBounds()
+      //If an object moves out of the world boundary, switch it's direction of motion.
+      //Bullets should be an exception to this rule (Override function?) 
+      //as they should be destroyed when reaching the edge of the world
+	{
+		if ((x < MatchConfig.windowBoundaryXmin && speedX < 0) || (x > MatchConfig.windowBoundaryXmax && speedX > 0)) 
+            	{
+			this.speedX=this.speedX*(-1);
+		}
+        if ((y < MatchConfig.windowBoundaryYmin && speedY < 0) || (y > MatchConfig.windowBoundaryYmax && speedY > 0)) 
+            	{
+			this.speedY=this.speedY*(-1);
+		}
+	}
+
         public void calculateGravityResultant()
         {
-            double acelleration_X = 0;
-            double acelleration_Y = 0;
+            //Modify acceleration rates of game objects based on gravity effect
+            double acceleration_X = 0;
+            double acceleration_Y = 0;
 
             List<GameObject> objectsG = GameScene.getInstance().getObjectsG();
             double G = GameScene.getInstance().getConfig().getGravityConstant();
 
             foreach (GameObject ob in objectsG){
-                acelleration_X += (G*ob.mass*this.mass)/Math.Pow(this.x-ob.x,2);
-                acelleration_Y += (G*ob.mass*this.mass)/Math.Pow(this.y-ob.y,2);
+                acceleration_X += (G*ob.mass*this.mass)/Math.Pow(this.x-ob.x,2);
+                acceleration_Y += (G*ob.mass*this.mass)/Math.Pow(this.y-ob.y,2);
             }
         }
     }
