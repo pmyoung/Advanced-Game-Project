@@ -32,6 +32,8 @@ namespace SpaceShip
           
   	public void outOfBounds()
 	{
+		//if the bullet moves outside of the world boundary, destroy it.  
+		//This needs to override the outOfBounds function for regular gameobjects
 		if ( x < MatchConfig.windowBoundaryXmin || x > MatchConfig.windowBoundaryXmax ) 
             	{
 			this.destroy();
