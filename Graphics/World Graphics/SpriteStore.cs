@@ -14,7 +14,7 @@ namespace GameGraphics
     class SpriteStore
     {
         private static int SPRITE_ERROR = 0;
-        private Dictionary<int, Sprite> spriteDictionary;
+        private Dictionary<int, Sprite> dictionary;
 
         /*
          * This method uses the games content manager to load all the sprites
@@ -25,26 +25,40 @@ namespace GameGraphics
          */
         public void LoadSprites(ContentManager Content)
         {
-            spriteDictionary = new Dictionary<int, Sprite>();
+            dictionary = new Dictionary<int, Sprite>();
 
             // temporary loading
-            spriteDictionary.Add(0, new Sprite(Content.Load<Texture2D>("test"), "Test"));
-            spriteDictionary.Add(1, new Sprite(Content.Load<Texture2D>("ship1_32x32"), "Ship"));
+            dictionary.Add(0, new Sprite(Content.Load<Texture2D>("sprite_error_8x8"), 8, 8, "error"));
+            dictionary.Add(1, new Sprite(Content.Load<Texture2D>("ship1_32x32"), 32, 32, "ship"));
         }// LoadSprites
 
         /*
-         * Returns a sprite based on the given ID
+         * Returns a sprite based on the given ID. If the ID exists
+         * the sprite that uses the ID is returned. Otherwise we send
+         * the error sprite. However if the error sprite somehow does
+         * not exist for some unknown reason then we send null.
          * 
          * @param
          * id: The ID of the sprite requested
          */
         public Sprite GetSprite(int id)
         {
-            Sprite sprite;
-
-            spriteDictionary.TryGetValue(id, out sprite);
-
-            return sprite;
+            Sprite value;
+            if (this.dictionary.TryGetValue(id, out value))
+            {
+                // we have it
+                return value;
+            }
+            else if (this.dictionary.TryGetValue(SPRITE_ERROR, out value))
+            {
+                // send the error sprite
+                return value;
+            }
+            else
+            {
+                // something has gone horribly wrong!
+                return null;
+            }
         }// GetSprite
 
     }// SpriteStore Class

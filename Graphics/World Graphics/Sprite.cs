@@ -26,11 +26,11 @@ namespace GameGraphics
          * sprite: The image that the sprite will use
          * type: The type of sprite (like Ship, Planet)
          */
-        public Sprite(Texture2D sprite, string type)
+        public Sprite(Texture2D sprite, int frameWidth, int frameHeight, string type)
         {
             this.SetSprite(sprite);
             this.SetSpriteType(type);
-            this.setFrameRectangle(32, 32);
+            this.setFrameRectangle(frameWidth, frameHeight);
         }// Sprite
 
         /*
@@ -81,6 +81,18 @@ namespace GameGraphics
             float rotation = (float) (Math.PI * angle / 180.0);
 
             this.Render(spriteBatch, bounds, color, rotation, origin, SpriteEffects.None, layer, action, frame);
+        }// Render
+
+        /*
+         * Renders the given GraphicsObject
+         * 
+         * @param
+         * spriteBatch: Contains graphics contexts for rendering on the game screen
+         * obj: The GraphicsObject that is to be rendered
+         */
+        public void Render(SpriteBatch spriteBatch, GraphicsObject obj)
+        {
+            this.Render(spriteBatch, (int)obj.GetX(), (int)obj.GetY(), (int)obj.GetRadius(), obj.GetColor(), (int)obj.GetAngle(), 0.0f, 0, 0);
         }// Render
 
         /*

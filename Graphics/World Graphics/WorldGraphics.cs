@@ -13,6 +13,7 @@ namespace GameGraphics
 {
     class WorldGraphics
     {
+        private GraphicsModel model;
         private SpriteStore store;
 
         /*
@@ -24,11 +25,22 @@ namespace GameGraphics
          */
         public void Render(SpriteBatch spriteBatch)
         {
-            // temporary drawing
-            this.getSpriteStore().GetSprite(1).Render(spriteBatch, 100, 100, 16, new Color (200, 200, 255), 90, 0.0f, 0, 1);
-            this.getSpriteStore().GetSprite(1).Render(spriteBatch, 200, 100, 16, Color.White, 45, 0.0f, 0, 0);
-
+            // currently ignores if the object can actually be seen or not
+            List<GraphicsObject> list = model.GetAsList();
+            for (int i = 0; i < list.Count; i++)
+            {
+                this.GetSpriteStore().GetSprite(list[i].GetSpriteID()).Render(spriteBatch, list[i]);
+            }
         }// Render
+
+        /*
+         * Sets the GraphicsModel that this class will reference and use
+         * to render the game world.
+         */
+        public void SetGraphicsModel(GraphicsModel model)
+        {
+            this.model = model;
+        }// SetGraphicsModel
 
         /*
          * Sets the SpriteStore object that will hold all the sprites
@@ -37,17 +49,25 @@ namespace GameGraphics
          * @param
          * store: The SpriteStore object to be used
          */
-        public void setSpriteStore(SpriteStore store)
+        public void SetSpriteStore(SpriteStore store)
         {
             this.store = store;
-        }// setSpriteStore
+        }// SetSpriteStore
+
+        /*
+         * Returns the GraphicsModel object that this class is using
+         */
+        public GraphicsModel GetGraphicsModel()
+        {
+            return this.model;
+        }// GetGraphicsModel
 
         /*
          * Gets the SpriteStore object that this class uses when rendering.
          */
-        public SpriteStore getSpriteStore()
+        public SpriteStore GetSpriteStore()
         {
             return this.store;
-        }// getSpriteStore
+        }// GetSpriteStore
     }// WorldGraphics Class
 }

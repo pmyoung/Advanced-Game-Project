@@ -1,3 +1,6 @@
+/*
+ * Note that the following code is for testing pourposes only!
+ */
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +24,7 @@ namespace Comp4432_AGP
         SpriteBatch spriteBatch;
 
         WorldGraphics world;
+        GraphicsModel model;
 
         public Game1()
         {
@@ -43,6 +47,20 @@ namespace Comp4432_AGP
         {
             // TODO: Add your initialization logic here
             world = new WorldGraphics();
+
+            model = new GraphicsModel();
+            model.Update(new GraphicsObject(1, 16, 16, 16, 0, 1, 0));
+            model.Update(new GraphicsObject(2, 48, 16, 16, 0, 1, 1));
+            model.Update(new GraphicsObject(3, 80, 16, 16, 0, 1, 2));
+            model.Update(new GraphicsObject(4, 16, 48, 16, 0, 1, 3));
+            model.Update(new GraphicsObject(5, 48, 48, 16, 0, 1, 4));
+            model.Update(new GraphicsObject(6, 80, 48, 16, 0, 1, 5));
+            model.Update(new GraphicsObject(7, 16, 80, 16, 0, 1, 6));
+            model.Update(new GraphicsObject(8, 48, 80, 16, 0, 1, 7));
+            model.Update(new GraphicsObject(9, 80, 80, 16, 0, 1, 8));
+
+            world.SetGraphicsModel(model);
+
             base.Initialize();
         }
 
@@ -58,7 +76,7 @@ namespace Comp4432_AGP
             // TODO: use this.Content to load your game content here
             SpriteStore sp = new SpriteStore();
             sp.LoadSprites(Content);
-            world.setSpriteStore(sp);
+            world.SetSpriteStore(sp);
         }
 
         /// <summary>
@@ -82,6 +100,40 @@ namespace Comp4432_AGP
                 this.Exit();
 
             // TODO: Add your update logic here
+            int accelerate = 0;
+            int rot = 0;
+            if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.W))
+            {
+                accelerate++;
+            }
+
+            if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.S))
+            {
+                accelerate--;
+            }
+
+            if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.A))
+            {
+                rot--;
+            }
+
+            if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.D))
+            {
+                rot++;
+            }
+
+            List<GraphicsObject> list = model.GetAsList();
+            for (int i = 0; i < list.Count; i++)
+            {
+                list[i].SetAngle(list[i].GetAngle() + rot);
+                // this is to highlight that the Math.Sin and Math.Cos use the radian
+                // for its "angle" It also demenstrates that we need to store our
+                // locations using floats as it will allow for nice turning rather
+                // than fixed 8-directional (N, NE, E, SE, S, SW, W, NW) movement
+                float rad = (float)(Math.PI / 180) * list[i].GetAngle();
+                list[i].SetX(list[i].GetX() + ((float)Math.Sin(rad) * accelerate));
+                list[i].SetY(list[i].GetY() - ((float)Math.Cos(rad) * accelerate));
+            }
 
             base.Update(gameTime);
         }
