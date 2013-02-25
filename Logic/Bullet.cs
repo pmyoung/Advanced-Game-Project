@@ -8,46 +8,44 @@ using System.Threading.Tasks;
 //Contains player data
 //Modifies player coordinates based on the keys depressed by the player
 
-namespace SpaceShip
+namespace SpaceShip.Logic
 {
-    class Bullet:GameObject
+    class Bullet : GameObject
     {
         int playerId;
-        
-        public Bullet(float bX,float bY,float bSpeedX,float bSpeedY, int playerId, int spriteId)
+
+        public Bullet(float bX, float bY, float bSpeedX, float bSpeedY, int playerId, int spriteId)
         {
             this.x = bX;
             this.y = bY;
             this.speedX = bSpeedX;
             this.speedY = bSpeedY;
             this.playerId = playerId;
-            setSpriteId(spriteId);
-            GameScene.getInstance().addNonGravityObject(this);
+            this.spriteID = spriteId;
+            MatchConfig.map.addNonGravityObject(this);
         }
-         
+
+
         private void destroy()
         {
-        	
         }
-          
-  	public void outOfBounds()
-	{
-		//if the bullet moves outside of the world boundary, destroy it.  
-		//This needs to override the outOfBounds function for regular gameobjects
-		if ( x < MatchConfig.windowBoundaryXmin || x > MatchConfig.windowBoundaryXmax ) 
-            	{
-			this.destroy();
-		}
-            	if ( y < MatchConfig.windowBoundaryYmin || y > MatchConfig.windowBoundaryYmax ) 
-            	{
-			this.destroy();
-		}
-	}
-	public void hit()
-	{
-		//check collision with players
-        	//add score to player whom shot bullet
-        	this.destroy();
-	}
+
+        public void outOfBounds()
+        {
+            if (x < 0 || x > MatchConfig.map.mapWidth)
+            { //change these to global variables for map boundary
+                this.destroy();
+            }
+            if (y < 0 || y > MatchConfig.map.mapHeigth)
+            { //change these to global variables for map boundary
+                this.destroy();
+            }
+        }
+        public void hit()
+        {
+            //check collision with players
+            //add score to player whom shot bullet
+            this.destroy();
+        }
     }
 }
