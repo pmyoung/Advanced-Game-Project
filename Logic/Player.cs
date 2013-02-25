@@ -12,35 +12,20 @@ namespace SpaceShip.Logic
 {
     class Player : GameObject
     {
-        int id;
+        public int id;
         int bulletId = 0;
+        //IMPLEMENT INVISIBILITY
         int invisible;
-        string name;
+        public string name;
         int reload = 0;
 
-        
+
 
         public Player(int id, string name, int spriteId)
         {
             this.id = id;
             this.name = name;
-            setSpriteId(spriteId);
-        }
-
-        public int getId()
-        {
-            return this.id;
-        }
-
-        public string getName()
-        {
-            return this.name;
-        }
-        
-        public void decrementReload()
-        {
-            //Should be called on each iteration of the main game loop
-            this.reload = this.reload-1;
+            this.spriteID = spriteId;
         }
 
         public void accelerate()
@@ -66,23 +51,25 @@ namespace SpaceShip.Logic
             angle += MatchConfig.rotationRate;
         }
         public void fire()
-          {
-              
-            //called whenever the player has the 'space' key depressed
-              if (this.reload<1){
-              //If the player isn't currently reloading...
-              //give the bullet the player's initial speed, plus the base bullet speed
-              bSpeedX = (float)(this.speedX + Math.Sin(this.angle) * MatchConfig.bulletSpeed);
-              bSpeedY = (float)(this.speedY + Math.Cos(this.angle) * MatchConfig.bulletSpeed);
-              //move the bullet to the edge of the player's ship
-              float bX = (float)(this.x + Math.Sin(this.angle) * this.radius);
-              float bY = (float)(this.y + Math.Cos(this.angle) * this.radius);
-              //set the player's reload timer
-              this.reload = GameScene.getInstance().getConfig().getReloadRate();
-              //create a new bullet object
-              new Bullet(bX,bY,bSpeedX,bSpeedY, id, bulletId);
-          }
+        {
 
-        
+            //called whenever the player has the 'space' key depressed
+            if (this.reload < 1)
+            {
+                //If the player isn't currently reloading...
+                //give the bullet the player's initial speed, plus the base bullet speed
+                float bSpeedX = (float)(this.speedX + Math.Sin(this.angle) * MatchConfig.bulletSpeed);
+                float bSpeedY = (float)(this.speedY + Math.Cos(this.angle) * MatchConfig.bulletSpeed);
+                //move the bullet to the edge of the player's ship
+                float bX = (float)(this.x + Math.Sin(this.angle) * this.radius);
+                float bY = (float)(this.y + Math.Cos(this.angle) * this.radius);
+                //set the player's reload timer
+                this.reload = MatchConfig.reloadRate;
+                //create a new bullet object
+                new Bullet(bX, bY, bSpeedX, bSpeedY, id, bulletId);
+            }
+
+
+        }
     }
 }
