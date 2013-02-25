@@ -24,6 +24,18 @@ namespace SpaceShip.Logic
             //Console.WriteLine("Map Constructor Called");
             load(mapPath);
         }
+        
+        public void clock()
+        {
+            foreach (GameObject o in nonGravityObjects)
+                o.calculateGravity();
+            foreach (GameObject o in gravityObjects)
+                o.calculateGravity();
+            foreach (GameObject o in nonGravityObjects)
+                o.updatePosition();
+            foreach (GameObject o in gravityObjects)
+                o.updatePosition();
+        }
 
         public List<GameObject> getGravityObjects()
         {
