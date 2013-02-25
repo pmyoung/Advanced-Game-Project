@@ -1,0 +1,6 @@
+<!-- Map -->
+<Map name='Map1' size='800x600'>
+  <Planet spriteId=0 x=400 y=300 mass=100 radius=32 fixed='true'>
+		<Moons spriteId=1 number=2 mass=30 radius=16 distance=32\>
+	</Planet>
+</Map>
