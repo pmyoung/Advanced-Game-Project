@@ -1,19 +1,23 @@
-﻿/*
- * @author Patrick Young
- */
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace GameGraphics
 {
-    class GraphicsModel
+    /**
+     * @file
+     * @author Patrick Young
+     * @version
+     * 
+     * @section DESCRIPTION
+     */
+    public class GraphicsModel
     {
         // dictionary key is the unique ID of the given GraphicsObject which is the same GetID()
         private Dictionary<int, GraphicsObject> dictionary;
 
-        /*
+        /**
          * Default Constructor that initializes the dictionary
          */
         public GraphicsModel()
@@ -21,13 +25,12 @@ namespace GameGraphics
             this.dictionary = new Dictionary<int, GraphicsObject>();
         }// GraphicsModel
 
-        /*
+        /**
          * Update takes a GraphicsObject as a parameter. If there is an object with the
          * same ID we will update the existing object with the new info otherwise we add
          * the object to our dictionary of object
          * 
-         * @param
-         * obj: The object that needs to be updated
+         * @param obj The object that needs to be updated
          */
         public void Update(GraphicsObject obj)
         {
@@ -47,7 +50,7 @@ namespace GameGraphics
         }// Update
 
 
-        /*
+        /**
          * When called will return a reference to the dictionary it uses
          */
         public Dictionary<int, GraphicsObject> GetAsDictionary()
@@ -55,7 +58,7 @@ namespace GameGraphics
             return this.dictionary;
         }// GetAsDictionary
 
-        /*
+        /**
          * When called wil return the dictionary in a List format of its values
          * to allow iteration.
          */
@@ -65,12 +68,11 @@ namespace GameGraphics
             return list;
         }// GetAsList
 
-        /*
+        /**
          * Returns the GraphicsObject with the given ID
          * if no object with this ID exists then it returns null
          * 
-         * @param
-         * id: the ID of the GraphicsObject
+         * @param id the ID of the GraphicsObject
          */
         public GraphicsObject GetObjectWithID(int id)
         {

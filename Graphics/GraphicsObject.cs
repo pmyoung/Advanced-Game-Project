@@ -1,7 +1,4 @@
-﻿/*
- * @author Patrick Young
- */
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +7,14 @@ using Microsoft.Xna.Framework;
 
 namespace GameGraphics
 {
-    class GraphicsObject
+    /**
+     * @file
+     * @author Patrick Young
+     * @version
+     * 
+     * @section DESCRIPTION
+     */
+    public class GraphicsObject
     {
         private static int DEFAULT_COLOR = 0;
 
@@ -25,17 +29,16 @@ namespace GameGraphics
         private float radius;
         private float angle;
 
-        /*
+        /**
          * This constructor creates a GraphicsObject with all its parameters defined with values
          * 
-         * @param
-         * id: the ID of the object this should be unique
-         * x: the x location of the object
-         * y: the y location of the object
-         * radius: the radius of the object
-         * angle: the angle of the object
-         * spriteID: the ID of the sprite the object uses
-         * colorID: the ID of the color it wil have (used for the player sprites)
+         * @param id the ID of the object this should be unique
+         * @param x the x location of the object
+         * @param y the y location of the object
+         * @param radius the radius of the object
+         * @param angle the angle of the object
+         * @param spriteID the ID of the sprite the object uses
+         * @param colorID the ID of the color it wil have (used for the player sprites)
          */
         public GraphicsObject(int id, float x, float y, float radius, float angle, int spriteID, int colorID)
         {
@@ -48,18 +51,17 @@ namespace GameGraphics
             this.SetColorID(colorID);
         }// GraphicsObject
 
-        /*
+        /**
          * Constructor that accepts all but the colorID as parameters. This is usefull
          * for object that do not need their color pallet changed (all objects other
          * than the players)
          * 
-         * @param
-         * id: the ID of the object this should be unique
-         * x: the x location of the object
-         * y: the y location of the object
-         * radius: the radius of the object
-         * angle: the angle of the object
-         * spriteID: the ID of the sprite the object uses
+         * @param id the ID of the object this should be unique
+         * @param x the x location of the object
+         * @param y the y location of the object
+         * @param radius the radius of the object
+         * @param angle the angle of the object
+         * @param spriteID the ID of the sprite the object uses
          */
         public GraphicsObject(int id, int x, int y, int radius, int angle, int spriteID)
         {
@@ -72,79 +74,72 @@ namespace GameGraphics
             this.SetColorID(DEFAULT_COLOR);
         }// GraphicsObject
 
-        /*
+        /**
          * Sets the ID of the GraphicsObject
          * 
-         * @param
-         * id: id to be given to the object
+         * @param id the id to be given to the object
          */
         public void SetID(int id)
         {
             this.id = id;
         }// SetID
 
-        /*
+        /**
          * Sets the X location of the GraphicsObject
          * 
-         * @param
-         * x: x location to be given to the object
+         * @param x the X location to be given to the object
          */
         public void SetX(float x){
             this.x = x;
         }// SetX
 
-        /*
+        /**
          * Sets the Y location of the GraphicsObject
          * 
-         * @param
-         * y: y location to be given to the object
+         * @param y the Y location to be given to the object
          */
         public void SetY(float y)
         {
             this.y = y;
         }// SetY
 
-        /*
+        /**
          * Sets the radius of the GraphicsObject
          * 
-         * @param
-         * r: the radius to be given to the object
+         * @param r the radius to be given to the object
          */
         public void SetRadius(float r)
         {
             this.radius = r;
         }// SetRadius
 
-        /*
+        /**
          * Sets the angle of the GraphicsObject
          * 
-         * @param
-         * a: the angle to be given to the object
+         * @param a the angle to be given to the object
          */
         public void SetAngle(float a)
         {
             this.angle = a%360;
         }// SetAngle
 
-        /*
+        /**
          * Sets the spriteID which will determine what sprite will be used
          * for this object
          * 
-         * @param
-         * spriteID: the ID of the sprite to be used
+         * @param spriteID the ID of the sprite to be used
          */
         public void SetSpriteID(int spriteID)
         {
             this.spriteID = spriteID;
         }// SetSpriteID
 
-        /*
+        /**
          * Sets the colorID of the GraphicsObject which determines the color.
          * If the ID is not in the range of the colorID's then it will use the
          * default (White)
          * 
-         * @param
-         * colorID: the ID value of the color to be used
+         * @param colorID the ID value of the color to be used
          */
         public void SetColorID(int colorID)
         {
@@ -158,7 +153,7 @@ namespace GameGraphics
             }
         }// SetColorID
 
-        /*
+        /**
          * Returns the objects unique ID.
          */
         public int GetID()
@@ -166,7 +161,7 @@ namespace GameGraphics
             return this.id;
         }// GetID
 
-        /*
+        /**
          * Returns the given X location
          */
         public float GetX()
@@ -174,7 +169,7 @@ namespace GameGraphics
             return this.x;
         }// GetX
 
-        /*
+        /**
          * Returns the given Y location
          */
         public float GetY()
@@ -182,7 +177,7 @@ namespace GameGraphics
             return this.y;
         }// GetY
 
-        /*
+        /**
          * Returns the given radius of the object
          */
         public float GetRadius()
@@ -190,7 +185,7 @@ namespace GameGraphics
             return this.radius;
         }// GetRadius
 
-        /*
+        /**
          * Returns the given angle of the object
          */
         public float GetAngle()
@@ -198,7 +193,7 @@ namespace GameGraphics
             return this.angle;
         }// GetAngle
 
-        /*
+        /**
          * Returns the given sprite ID of the object
          */
         public int GetSpriteID()
@@ -206,7 +201,7 @@ namespace GameGraphics
             return this.spriteID;
         }// GetSpriteID
 
-        /*
+        /**
          * Returns the given color ID of the object
          */
         public int GetColorID()
@@ -214,7 +209,7 @@ namespace GameGraphics
             return this.colorID;
         }// GetColorID
 
-        /*
+        /**
          * Returns the actual color that this sprite will be using
          */
         public Color GetColor()
