@@ -89,5 +89,17 @@ namespace GameGraphics
                 return null;
             }
         }// GetObjectWithID
+
+        /**
+         * Attempts to remove a GraphicsObject with the specified ID from the dictionary
+         * If the ID exists then it will remove the object and return true. otherwise if
+         * it can not find it it will return false.
+         * 
+         * @param id the unique ID of the Graphics object to be removed.
+         */
+        public Boolean Remove(int id)
+        {
+            return this.dictionary.Remove(id);
+        }// Remove
     }// GraphicsModel Class
 }
