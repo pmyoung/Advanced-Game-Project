@@ -26,6 +26,9 @@ namespace Comp4432_AGP
         WorldGraphics world;
         GraphicsModel model;
 
+        int killShip = 0;
+        Boolean gotOne = false;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -49,15 +52,19 @@ namespace Comp4432_AGP
             world = new WorldGraphics();
 
             model = new GraphicsModel();
-            model.Update(new GraphicsObject(1, 16, 16, 16, 0, 1, 0));
-            model.Update(new GraphicsObject(2, 48, 16, 16, 0, 1, 1));
-            model.Update(new GraphicsObject(3, 80, 16, 16, 0, 1, 2));
-            model.Update(new GraphicsObject(4, 16, 48, 16, 0, 1, 3));
-            model.Update(new GraphicsObject(5, 48, 48, 16, 0, 1, 4));
-            model.Update(new GraphicsObject(6, 80, 48, 16, 0, 1, 5));
-            model.Update(new GraphicsObject(7, 16, 80, 16, 0, 1, 6));
-            model.Update(new GraphicsObject(8, 48, 80, 16, 0, 1, 7));
-            model.Update(new GraphicsObject(9, 80, 80, 16, 0, 1, 8));
+            int diameter = 64;
+            int radius = diameter/2;
+            int spriteID = 201;
+            int id = 0;
+            int space = 3;
+            for (int y = 0; y < 3; y++)
+            {
+                for (int x = 0; x < 3; x++)
+                {
+                    model.Update(new GraphicsObject(id, (diameter*(x+1))+space*x, (diameter*(y+1))+space*y, radius, 0, spriteID, id));
+                    id++;
+                }
+            }
 
             world.SetGraphicsModel(model);
 
@@ -101,38 +108,54 @@ namespace Comp4432_AGP
 
             // TODO: Add your update logic here
             int accelerate = 0;
+            int speed = 2;
             int rot = 0;
+            int rotSpeed = 1;
             if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.W))
             {
-                accelerate++;
+                accelerate+=speed;
             }
 
             if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.S))
             {
-                accelerate--;
+                accelerate-=speed;
             }
 
             if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.A))
             {
-                rot--;
+                rot-=rotSpeed;
             }
 
             if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.D))
             {
-                rot++;
+                rot+=rotSpeed;
+            }
+
+            if (Keyboard.GetState(PlayerIndex.One).IsKeyDown(Keys.K) && !gotOne)
+            {
+                model.Remove(killShip);
+                killShip++;
+                gotOne = true;
+            }
+
+            if (Keyboard.GetState(PlayerIndex.One).IsKeyUp(Keys.K) && gotOne)
+            {
+                gotOne = false;
             }
 
             List<GraphicsObject> list = model.GetAsList();
             for (int i = 0; i < list.Count; i++)
             {
-                list[i].SetAngle(list[i].GetAngle() + rot);
+                float angle = list[i].GetAngle() + rot;
                 // this is to highlight that the Math.Sin and Math.Cos use the radian
                 // for its "angle" It also demenstrates that we need to store our
                 // locations using floats as it will allow for nice turning rather
                 // than fixed 8-directional (N, NE, E, SE, S, SW, W, NW) movement
                 float rad = (float)(Math.PI / 180) * list[i].GetAngle();
-                list[i].SetX(list[i].GetX() + ((float)Math.Sin(rad) * accelerate));
-                list[i].SetY(list[i].GetY() - ((float)Math.Cos(rad) * accelerate));
+                float x = list[i].GetX() + ((float)Math.Sin(rad) * accelerate);
+                float y = list[i].GetY() - ((float)Math.Cos(rad) * accelerate);
+
+                model.Update(new GraphicsObject(list[i].GetID(), x, y, list[i].GetRadius(), angle, list[i].GetSpriteID()));
             }
 
             base.Update(gameTime);

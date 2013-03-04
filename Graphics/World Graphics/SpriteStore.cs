@@ -33,6 +33,10 @@ namespace GameGraphics
             // temporary loading
             dictionary.Add(0, new Sprite(Content.Load<Texture2D>("sprite_error_8x8"), 8, 8, "error"));
             dictionary.Add(1, new Sprite(Content.Load<Texture2D>("ship1_32x32"), 32, 32, "ship"));
+            dictionary.Add(101, new Sprite(Content.Load<Texture2D>("bullet1_8x8"), 8, 8, "bullet"));
+            dictionary.Add(102, new Sprite(Content.Load<Texture2D>("bullet2_8x8"), 8, 8, "bullet"));
+            dictionary.Add(201, new Sprite(Content.Load<Texture2D>("planet1_64x64"), 64, 64, "planet"));
+            dictionary.Add(301, new Sprite(Content.Load<Texture2D>("moon1_32x32"), 32, 32, "moon"));
         }// LoadSprites
 
         /**
