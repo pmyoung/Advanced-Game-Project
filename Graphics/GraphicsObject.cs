@@ -16,8 +16,20 @@ namespace GameGraphics
      */
     public class GraphicsObject
     {
+        // this color will be used by default if the color is set to it or an invalid ID is given
         private static int DEFAULT_COLOR = 0;
 
+        /*
+         * Player 1 = light coral "red"
+         * Player 2 = light blue "blue"
+         * Player 3 = lime "green"
+         * Player 4 = yellow "yellow"
+         * Player 5 = cyan "cyan"
+         * Player 6 = orange "orange"
+         * Player 7 = medium purple "purple"
+         * Player 8 = pink "pink"
+         * Everything else will use white (a non altered sprite color)
+         */
         private static Color[] COLOR = { Color.White, Color.LightCoral, Color.LightBlue, Color.Lime, Color.Yellow, Color.Cyan, Color.Orange, Color.MediumPurple, Color.Pink };
 
         private int id;
@@ -63,7 +75,7 @@ namespace GameGraphics
          * @param angle the angle of the object
          * @param spriteID the ID of the sprite the object uses
          */
-        public GraphicsObject(int id, int x, int y, int radius, int angle, int spriteID)
+        public GraphicsObject(int id, float x, float y, float radius, float angle, int spriteID)
         {
             this.SetID(id);
             this.SetX(x);
