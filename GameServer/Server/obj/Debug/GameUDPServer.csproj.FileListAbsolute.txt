@@ -48,3 +48,16 @@ C:\Documents and Settings\Student\Desktop\VideoGame-Midterm-NetworkingCommented\
 C:\Documents and Settings\Student\Desktop\VideoGame-Midterm-NetworkingCommented\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\ResGen.read.1.tlog
 C:\Documents and Settings\Student\Desktop\VideoGame-Midterm-NetworkingCommented\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\GenerateResource-ResGen.write.1.tlog
 C:\Documents and Settings\Student\Desktop\VideoGame-Midterm-NetworkingCommented\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\ResGen.write.1.tlog
+C:\Users\Nick\Documents\GitHub\Advanced-Game-Project\GameServer\Server\obj\Debug\Server.exe
+C:\Users\Nick\Documents\GitHub\Advanced-Game-Project\GameServer\Server\obj\Debug\Server.pdb
+C:\Users\Nick\Documents\GitHub\Advanced-Game-Project\GameServer\Server\bin\Debug\Server.exe
+C:\Users\Nick\Documents\GitHub\Advanced-Game-Project\GameServer\Server\bin\Debug\Server.pdb
+C:\Users\Nick\Documents\GitHub\Advanced-Game-Project\GameServer\Server\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Nick\Documents\GitHub\Advanced-Game-Project\GameServer\Server\obj\Debug\Server.ServerSideConfirm.resources
+C:\Users\Nick\Documents\GitHub\Advanced-Game-Project\GameServer\Server\obj\Debug\Server.ServerSideMenu.resources
+C:\Users\Nick\Documents\GitHub\Advanced-Game-Project\GameServer\Server\obj\Debug\Server.Bullet.resources
+C:\Users\Nick\Documents\GitHub\Advanced-Game-Project\GameServer\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Users\Nick\Documents\GitHub\Advanced-Game-Project\GameServer\Server\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Users\Nick\Documents\GitHub\Advanced-Game-Project\GameServer\Server\obj\Debug\ResGen.read.1.tlog
+C:\Users\Nick\Documents\GitHub\Advanced-Game-Project\GameServer\Server\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Users\Nick\Documents\GitHub\Advanced-Game-Project\GameServer\Server\obj\Debug\ResGen.write.1.tlog
