@@ -1,0 +1,68 @@
+﻿/*
+ * The start-up menus for game 
+ * 
+ */
+
+
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using System.Net;
+
+namespace Client
+{
+    public partial class ClientSideMenu : Form
+    {
+        //The values
+       public String userName = "Default Name";
+       public int shiptype = 0; //the code for the first ship 0=Alpha 1=beta
+       public object testIP = "0"; //set the default addresses
+       public ClientConfirm info; 
+
+
+        public ClientSideMenu()
+        {
+            InitializeComponent();
+            IPHostEntry ipHostInfo = Dns.Resolve(Dns.GetHostName());
+            for (int i = 0; i < ipHostInfo.AddressList.Length; i++)
+            {
+                testIP = IIPAddresses.Items.Add(ipHostInfo.AddressList[i]);
+            }
+        }
+
+        // The infomration entered by the name textbox
+        private void IName_TextChanged(object sender, EventArgs e)
+        {
+            // Add error checking for the parameters
+            userName = IName.Text;
+        }
+
+        private void IShiptype_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            shiptype = IShiptype.SelectedIndex;
+           // this.Text = shiptype.ToString();
+        }
+
+        private void IIPAddresses_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            testIP = IIPAddresses.SelectedItem;  
+        }
+
+        private void BStart_Click(object sender, EventArgs e)
+        {
+           //create new form
+            info = new ClientConfirm(this);
+            info.ShowDialog();
+            if (info.answer == 1)
+                Close(); //close the form iif the information entered is correct
+
+        }
+
+    }
+}

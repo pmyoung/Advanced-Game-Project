@@ -1,0 +1,31 @@
+C:\Users\Nick\Desktop\UDP Chat\SGSserverUDP\Server\bin\Release\Server.exe
+C:\Users\Nick\Desktop\UDP Chat\SGSserverUDP\Server\bin\Release\Server.pdb
+C:\Users\Nick\Desktop\UDP Chat\SGSserverUDP\Server\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Nick\Desktop\UDP Chat\SGSserverUDP\Server\obj\Release\Server.SGSserverForm.resources
+C:\Users\Nick\Desktop\UDP Chat\SGSserverUDP\Server\obj\Release\Server.Properties.Resources.resources
+C:\Users\Nick\Desktop\UDP Chat\SGSserverUDP\Server\obj\Release\ResGen.read.1.tlog
+C:\Users\Nick\Desktop\UDP Chat\SGSserverUDP\Server\obj\Release\ResGen.write.1.tlog
+C:\Users\Nick\Desktop\UDP Chat\SGSserverUDP\Server\obj\Release\Server.exe
+C:\Users\Nick\Desktop\UDP Chat\SGSserverUDP\Server\obj\Release\Server.pdb
+E:\VideoGame\SGSserverUDP\Server\obj\Release\Server.exe
+E:\VideoGame\SGSserverUDP\Server\obj\Release\Server.pdb
+E:\VideoGame\SGSserverUDP\Server\bin\Release\Server.exe
+E:\VideoGame\SGSserverUDP\Server\bin\Release\Server.pdb
+E:\VideoGame\SGSserverUDP\Server\obj\Release\ResolveAssemblyReference.cache
+E:\VideoGame\SGSserverUDP\Server\obj\Release\Server.SGSserverForm.resources
+E:\VideoGame\SGSserverUDP\Server\obj\Release\Server.Properties.Resources.resources
+E:\VideoGame\SGSserverUDP\Server\obj\Release\GenerateResource-ResGen.read.1.tlog
+E:\VideoGame\SGSserverUDP\Server\obj\Release\ResGen.read.1.tlog
+E:\VideoGame\SGSserverUDP\Server\obj\Release\GenerateResource-ResGen.write.1.tlog
+E:\VideoGame\SGSserverUDP\Server\obj\Release\ResGen.write.1.tlog
+C:\Users\Nick\Desktop\VideoGame\SGSserverUDP\Server\obj\Release\Server.exe
+C:\Users\Nick\Desktop\VideoGame\SGSserverUDP\Server\obj\Release\Server.pdb
+C:\Users\Nick\Desktop\VideoGame\SGSserverUDP\Server\bin\Release\Server.exe
+C:\Users\Nick\Desktop\VideoGame\SGSserverUDP\Server\bin\Release\Server.pdb
+C:\Users\Nick\Desktop\VideoGame\SGSserverUDP\Server\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Nick\Desktop\VideoGame\SGSserverUDP\Server\obj\Release\Server.SGSserverForm.resources
+C:\Users\Nick\Desktop\VideoGame\SGSserverUDP\Server\obj\Release\Server.Properties.Resources.resources
+C:\Users\Nick\Desktop\VideoGame\SGSserverUDP\Server\obj\Release\GenerateResource-ResGen.read.1.tlog
+C:\Users\Nick\Desktop\VideoGame\SGSserverUDP\Server\obj\Release\ResGen.read.1.tlog
+C:\Users\Nick\Desktop\VideoGame\SGSserverUDP\Server\obj\Release\GenerateResource-ResGen.write.1.tlog
+C:\Users\Nick\Desktop\VideoGame\SGSserverUDP\Server\obj\Release\ResGen.write.1.tlog

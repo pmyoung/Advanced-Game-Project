@@ -1,0 +1,43 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+
+namespace Server
+{
+    public partial class ServerSideConfirm : Form
+    {
+        private ServerSideMenu SMenu;
+        public int answer=0;
+
+        public ServerSideConfirm(ServerSideMenu _sMenu)
+        {
+            SMenu = _sMenu;
+            InitializeComponent();
+        }
+
+        private void ServerSideConfirm_Load(object sender, EventArgs e)
+        {
+            DPlayerNum.Text = SMenu.playerNum.ToString();
+            DMaxHealth.Text = SMenu.health.ToString();
+            DMaxPoints.Text = SMenu.pointsToWin.ToString();
+        }
+
+        private void True_Click(object sender, EventArgs e)
+        {
+            answer = 1;
+            Close();
+        }
+
+        private void False_Click(object sender, EventArgs e)
+        {
+            answer = 0;
+            Close();
+        }
+
+      
+    }
+}

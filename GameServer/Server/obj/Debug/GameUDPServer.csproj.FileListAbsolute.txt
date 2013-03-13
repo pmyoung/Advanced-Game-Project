@@ -1,0 +1,50 @@
+C:\Users\Nick\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Nick\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\Server.ServerSideConfirm.resources
+C:\Users\Nick\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\Server.ServerSideMenu.resources
+C:\Users\Nick\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\Server.Bullet.resources
+C:\Users\Nick\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Users\Nick\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\ResGen.read.1.tlog
+C:\Users\Nick\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\ResGen.write.1.tlog
+C:\Users\Nick\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\bin\Debug\Server.exe
+C:\Users\Nick\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\bin\Debug\Server.pdb
+C:\Users\Nick\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\Server.exe
+C:\Users\Nick\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\Server.pdb
+C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\Server.exe
+C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\Server.pdb
+C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGame-Midterm\VideoGameNew\GameServer\Server\bin\Debug\Server.exe
+C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGame-Midterm\VideoGameNew\GameServer\Server\bin\Debug\Server.pdb
+C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\Server.ServerSideConfirm.resources
+C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\Server.ServerSideMenu.resources
+C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\Server.Bullet.resources
+C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\ResGen.read.1.tlog
+C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\ResGen.write.1.tlog
+C:\Documents and Settings\Student\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\Server.exe
+C:\Documents and Settings\Student\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\Server.pdb
+C:\Documents and Settings\Student\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\bin\Debug\Server.exe
+C:\Documents and Settings\Student\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\bin\Debug\Server.pdb
+C:\Documents and Settings\Student\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Student\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\Server.ServerSideConfirm.resources
+C:\Documents and Settings\Student\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\Server.ServerSideMenu.resources
+C:\Documents and Settings\Student\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\Server.Bullet.resources
+C:\Documents and Settings\Student\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Documents and Settings\Student\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Student\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\ResGen.read.1.tlog
+C:\Documents and Settings\Student\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Student\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\ResGen.write.1.tlog
+C:\Documents and Settings\Student\Desktop\VideoGame-Midterm-NetworkingCommented\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\Server.exe
+C:\Documents and Settings\Student\Desktop\VideoGame-Midterm-NetworkingCommented\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\Server.pdb
+C:\Documents and Settings\Student\Desktop\VideoGame-Midterm-NetworkingCommented\VideoGame-Midterm\VideoGameNew\GameServer\Server\bin\Debug\Server.exe
+C:\Documents and Settings\Student\Desktop\VideoGame-Midterm-NetworkingCommented\VideoGame-Midterm\VideoGameNew\GameServer\Server\bin\Debug\Server.pdb
+C:\Documents and Settings\Student\Desktop\VideoGame-Midterm-NetworkingCommented\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Student\Desktop\VideoGame-Midterm-NetworkingCommented\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\Server.ServerSideConfirm.resources
+C:\Documents and Settings\Student\Desktop\VideoGame-Midterm-NetworkingCommented\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\Server.ServerSideMenu.resources
+C:\Documents and Settings\Student\Desktop\VideoGame-Midterm-NetworkingCommented\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\Server.Bullet.resources
+C:\Documents and Settings\Student\Desktop\VideoGame-Midterm-NetworkingCommented\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Documents and Settings\Student\Desktop\VideoGame-Midterm-NetworkingCommented\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Student\Desktop\VideoGame-Midterm-NetworkingCommented\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\ResGen.read.1.tlog
+C:\Documents and Settings\Student\Desktop\VideoGame-Midterm-NetworkingCommented\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Student\Desktop\VideoGame-Midterm-NetworkingCommented\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\ResGen.write.1.tlog

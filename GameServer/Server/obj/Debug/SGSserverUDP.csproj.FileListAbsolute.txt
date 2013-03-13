@@ -1,0 +1,125 @@
+C:\Users\Nick\Desktop\UDP Chat\SGSserverUDP\Server\bin\Debug\Server.exe
+C:\Users\Nick\Desktop\UDP Chat\SGSserverUDP\Server\bin\Debug\Server.pdb
+C:\Users\Nick\Desktop\UDP Chat\SGSserverUDP\Server\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Nick\Desktop\UDP Chat\SGSserverUDP\Server\obj\Debug\Server.SGSserverForm.resources
+C:\Users\Nick\Desktop\UDP Chat\SGSserverUDP\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Users\Nick\Desktop\UDP Chat\SGSserverUDP\Server\obj\Debug\ResGen.read.1.tlog
+C:\Users\Nick\Desktop\UDP Chat\SGSserverUDP\Server\obj\Debug\ResGen.write.1.tlog
+C:\Users\Nick\Desktop\UDP Chat\SGSserverUDP\Server\obj\Debug\Server.exe
+C:\Users\Nick\Desktop\UDP Chat\SGSserverUDP\Server\obj\Debug\Server.pdb
+C:\Users\Nick\Desktop\VideoGame\SGSserverUDP\Server\obj\Debug\Server.exe
+C:\Users\Nick\Desktop\VideoGame\SGSserverUDP\Server\obj\Debug\Server.pdb
+C:\Users\Nick\Desktop\VideoGame\SGSserverUDP\Server\bin\Debug\Server.exe
+C:\Users\Nick\Desktop\VideoGame\SGSserverUDP\Server\bin\Debug\Server.pdb
+C:\Users\Nick\Desktop\VideoGame\SGSserverUDP\Server\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Nick\Desktop\VideoGame\SGSserverUDP\Server\obj\Debug\Server.SGSserverForm.resources
+C:\Users\Nick\Desktop\VideoGame\SGSserverUDP\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Users\Nick\Desktop\VideoGame\SGSserverUDP\Server\obj\Debug\ResGen.read.1.tlog
+C:\Users\Nick\Desktop\VideoGame\SGSserverUDP\Server\obj\Debug\ResGen.write.1.tlog
+C:\Users\Maxwell\Desktop\videgameupdate\VideoGame\SGSserverUDP\Server\obj\Debug\Server.exe
+C:\Users\Maxwell\Desktop\videgameupdate\VideoGame\SGSserverUDP\Server\obj\Debug\Server.pdb
+C:\Users\Maxwell\Desktop\videgameupdate\VideoGame\SGSserverUDP\Server\bin\Debug\Server.exe
+C:\Users\Maxwell\Desktop\videgameupdate\VideoGame\SGSserverUDP\Server\bin\Debug\Server.pdb
+C:\Users\Maxwell\Desktop\videgameupdate\VideoGame\SGSserverUDP\Server\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Maxwell\Desktop\videgameupdate\VideoGame\SGSserverUDP\Server\obj\Debug\Server.player.resources
+C:\Users\Maxwell\Desktop\videgameupdate\VideoGame\SGSserverUDP\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Users\Maxwell\Desktop\videgameupdate\VideoGame\SGSserverUDP\Server\obj\Debug\ResGen.read.1.tlog
+C:\Users\Maxwell\Desktop\videgameupdate\VideoGame\SGSserverUDP\Server\obj\Debug\ResGen.write.1.tlog
+C:\Users\Maxwell\Desktop\Game Project\VideoGame\SGSserverUDP\Server\obj\Debug\Server.exe
+C:\Users\Maxwell\Desktop\Game Project\VideoGame\SGSserverUDP\Server\obj\Debug\Server.pdb
+C:\Users\Maxwell\Desktop\Game Project\VideoGame\SGSserverUDP\Server\bin\Debug\Server.exe
+C:\Users\Maxwell\Desktop\Game Project\VideoGame\SGSserverUDP\Server\bin\Debug\Server.pdb
+C:\Users\Maxwell\Desktop\Game Project\VideoGame\SGSserverUDP\Server\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Maxwell\Desktop\Game Project\VideoGame\SGSserverUDP\Server\obj\Debug\Server.player.resources
+C:\Users\Maxwell\Desktop\Game Project\VideoGame\SGSserverUDP\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Users\Maxwell\Desktop\Game Project\VideoGame\SGSserverUDP\Server\obj\Debug\ResGen.read.1.tlog
+C:\Users\Maxwell\Desktop\Game Project\VideoGame\SGSserverUDP\Server\obj\Debug\ResGen.write.1.tlog
+C:\Users\Maxwell\Desktop\Game Project\VideoGame\GameServer\Server\obj\Debug\Server.exe
+C:\Users\Maxwell\Desktop\Game Project\VideoGame\GameServer\Server\obj\Debug\Server.pdb
+C:\Documents and Settings\Student\Desktop\Game Project\Game Project Latest\Game Project\VideoGame\GameServer\Server\obj\Debug\Server.exe
+C:\Documents and Settings\Student\Desktop\Game Project\Game Project Latest\Game Project\VideoGame\GameServer\Server\obj\Debug\Server.pdb
+C:\Documents and Settings\Student\Desktop\Game Project\Game Project\Game Project Latest\Game Project\VideoGame\GameServer\Server\obj\Debug\Server.exe
+C:\Documents and Settings\Student\Desktop\Game Project\Game Project\Game Project Latest\Game Project\VideoGame\GameServer\Server\obj\Debug\Server.pdb
+C:\Documents and Settings\Student\Desktop\Latest Game Project\Game Project\Game Project\Game Project Latest\Game Project\VideoGame\GameServer\Server\obj\Debug\Server.pdb
+C:\Documents and Settings\Student\Desktop\Latest Game Project\Game Project\Game Project\Game Project Latest\Game Project\VideoGame\GameServer\Server\bin\Debug\Server.exe
+C:\Documents and Settings\Student\Desktop\Latest Game Project\Game Project\Game Project\Game Project Latest\Game Project\VideoGame\GameServer\Server\bin\Debug\Server.pdb
+C:\Documents and Settings\Student\Desktop\Latest Game Project\Game Project\Game Project\Game Project Latest\Game Project\VideoGame\GameServer\Server\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Student\Desktop\Latest Game Project\Game Project\Game Project\Game Project Latest\Game Project\VideoGame\GameServer\Server\obj\Debug\Server.player.resources
+C:\Documents and Settings\Student\Desktop\Latest Game Project\Game Project\Game Project\Game Project Latest\Game Project\VideoGame\GameServer\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Documents and Settings\Student\Desktop\Latest Game Project\Game Project\Game Project\Game Project Latest\Game Project\VideoGame\GameServer\Server\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Student\Desktop\Latest Game Project\Game Project\Game Project\Game Project Latest\Game Project\VideoGame\GameServer\Server\obj\Debug\ResGen.read.1.tlog
+C:\Documents and Settings\Student\Desktop\Latest Game Project\Game Project\Game Project\Game Project Latest\Game Project\VideoGame\GameServer\Server\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Student\Desktop\Latest Game Project\Game Project\Game Project\Game Project Latest\Game Project\VideoGame\GameServer\Server\obj\Debug\ResGen.write.1.tlog
+C:\Documents and Settings\Student\Desktop\Latest Game Project\Game Project\Game Project\Game Project Latest\Game Project\VideoGame\GameServer\Server\obj\Debug\Server.exe
+C:\Documents and Settings\Student\Desktop\VideoGameNICK\GameServer\Server\obj\Debug\Server.exe
+C:\Documents and Settings\Student\Desktop\VideoGameNICK\GameServer\Server\obj\Debug\Server.pdb
+C:\Documents and Settings\Student\Desktop\VideoGameNICK\GameServer\Server\bin\Debug\Server.exe
+C:\Documents and Settings\Student\Desktop\VideoGameNICK\GameServer\Server\bin\Debug\Server.pdb
+C:\Documents and Settings\Student\Desktop\VideoGameNICK\GameServer\Server\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Student\Desktop\VideoGameNICK\GameServer\Server\obj\Debug\Server.player.resources
+C:\Documents and Settings\Student\Desktop\VideoGameNICK\GameServer\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Documents and Settings\Student\Desktop\VideoGameNICK\GameServer\Server\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Student\Desktop\VideoGameNICK\GameServer\Server\obj\Debug\ResGen.read.1.tlog
+C:\Documents and Settings\Student\Desktop\VideoGameNICK\GameServer\Server\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Student\Desktop\VideoGameNICK\GameServer\Server\obj\Debug\ResGen.write.1.tlog
+C:\Users\Nick\Desktop\VideoGameNew\GameServer\Server\bin\Debug\Server.exe
+C:\Users\Nick\Desktop\VideoGameNew\GameServer\Server\bin\Debug\Server.pdb
+C:\Users\Nick\Desktop\VideoGameNew\GameServer\Server\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Nick\Desktop\VideoGameNew\GameServer\Server\obj\Debug\Server.player.resources
+C:\Users\Nick\Desktop\VideoGameNew\GameServer\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Users\Nick\Desktop\VideoGameNew\GameServer\Server\obj\Debug\ResGen.read.1.tlog
+C:\Users\Nick\Desktop\VideoGameNew\GameServer\Server\obj\Debug\ResGen.write.1.tlog
+C:\Users\Nick\Desktop\VideoGameNew\GameServer\Server\obj\Debug\Server.exe
+C:\Users\Nick\Desktop\VideoGameNew\GameServer\Server\obj\Debug\Server.pdb
+C:\Documents and Settings\Student\Desktop\VideoGameNew\GameServer\Server\obj\Debug\Server.exe
+C:\Documents and Settings\Student\Desktop\VideoGameNew\GameServer\Server\obj\Debug\Server.pdb
+C:\Documents and Settings\Student\Desktop\VideoGameNew\GameServer\Server\bin\Debug\Server.exe
+C:\Documents and Settings\Student\Desktop\VideoGameNew\GameServer\Server\bin\Debug\Server.pdb
+C:\Documents and Settings\Student\Desktop\VideoGameNew\GameServer\Server\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Student\Desktop\VideoGameNew\GameServer\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Documents and Settings\Student\Desktop\VideoGameNew\GameServer\Server\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Student\Desktop\VideoGameNew\GameServer\Server\obj\Debug\ResGen.read.1.tlog
+C:\Documents and Settings\Student\Desktop\VideoGameNew\GameServer\Server\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Student\Desktop\VideoGameNew\GameServer\Server\obj\Debug\ResGen.write.1.tlog
+C:\Documents and Settings\Student\Desktop\VideoGameNew\GameServer\Server\obj\Debug\Server.bullet.resources
+C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGameNew\GameServer\Server\obj\Debug\Server.exe
+C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGameNew\GameServer\Server\obj\Debug\Server.pdb
+C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGameNew\GameServer\Server\bin\Debug\Server.exe
+C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGameNew\GameServer\Server\bin\Debug\Server.pdb
+C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGameNew\GameServer\Server\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGameNew\GameServer\Server\obj\Debug\Server.Bullet.resources
+C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGameNew\GameServer\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGameNew\GameServer\Server\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGameNew\GameServer\Server\obj\Debug\ResGen.read.1.tlog
+C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGameNew\GameServer\Server\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGameNew\GameServer\Server\obj\Debug\ResGen.write.1.tlog
+C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGameNew\GameServer\Server\obj\Debug\Server.ServerSideConfirm.resources
+C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGameNew\GameServer\Server\obj\Debug\Server.ServerSideMenu.resources
+C:\Documents and Settings\Student\Desktop\VideoGameNew - 2\VideoGameNew\GameServer\Server\obj\Debug\Server.exe
+C:\Documents and Settings\Student\Desktop\VideoGameNew - 2\VideoGameNew\GameServer\Server\obj\Debug\Server.pdb
+C:\Documents and Settings\Student\Desktop\VideoGameNew - 2\VideoGameNew\GameServer\Server\bin\Debug\Server.exe
+C:\Documents and Settings\Student\Desktop\VideoGameNew - 2\VideoGameNew\GameServer\Server\bin\Debug\Server.pdb
+C:\Documents and Settings\Student\Desktop\VideoGameNew - 2\VideoGameNew\GameServer\Server\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Student\Desktop\VideoGameNew - 2\VideoGameNew\GameServer\Server\obj\Debug\Server.ServerSideConfirm.resources
+C:\Documents and Settings\Student\Desktop\VideoGameNew - 2\VideoGameNew\GameServer\Server\obj\Debug\Server.ServerSideMenu.resources
+C:\Documents and Settings\Student\Desktop\VideoGameNew - 2\VideoGameNew\GameServer\Server\obj\Debug\Server.Bullet.resources
+C:\Documents and Settings\Student\Desktop\VideoGameNew - 2\VideoGameNew\GameServer\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Documents and Settings\Student\Desktop\VideoGameNew - 2\VideoGameNew\GameServer\Server\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Documents and Settings\Student\Desktop\VideoGameNew - 2\VideoGameNew\GameServer\Server\obj\Debug\ResGen.read.1.tlog
+C:\Documents and Settings\Student\Desktop\VideoGameNew - 2\VideoGameNew\GameServer\Server\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Documents and Settings\Student\Desktop\VideoGameNew - 2\VideoGameNew\GameServer\Server\obj\Debug\ResGen.write.1.tlog
+C:\Users\Nick\Desktop\VideoGameNew - 2\VideoGameNew\GameServer\Server\obj\Debug\Server.exe
+C:\Users\Nick\Desktop\VideoGameNew - 2\VideoGameNew\GameServer\Server\obj\Debug\Server.pdb
+C:\Users\Nick\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\Server.exe
+C:\Users\Nick\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\Server.pdb
+C:\Users\Nick\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\bin\Debug\Server.exe
+C:\Users\Nick\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\bin\Debug\Server.pdb
+C:\Users\Nick\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Nick\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\Server.ServerSideConfirm.resources
+C:\Users\Nick\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\Server.ServerSideMenu.resources
+C:\Users\Nick\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\Server.Bullet.resources
+C:\Users\Nick\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Users\Nick\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Users\Nick\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\ResGen.read.1.tlog
+C:\Users\Nick\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Users\Nick\Desktop\VideoGame-Midterm\VideoGameNew\GameServer\Server\obj\Debug\ResGen.write.1.tlog

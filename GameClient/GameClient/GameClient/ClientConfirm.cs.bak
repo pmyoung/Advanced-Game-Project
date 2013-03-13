@@ -1,0 +1,48 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace Client
+{
+    public partial class ClientConfirm : Form
+    {
+        private ClientSideMenu Cmenu;
+        public int answer = 0; //0 is false
+
+        public ClientConfirm(ClientSideMenu _Cmenu)
+        {
+            Cmenu=_Cmenu;
+            InitializeComponent();
+        }
+
+        private void ClientConfirm_Load(object sender, EventArgs e)
+        {
+            //what happens if it's loaded
+            Dname.Text = Cmenu.userName;
+            DIP.Text = Cmenu.testIP.ToString();
+            if (Cmenu.shiptype == 0) //ship type one
+                DShiptype.Text = "Alpha";
+            else
+                DShiptype.Text = "Beta";
+           
+        }
+
+        private void InfoTrue_Click(object sender, EventArgs e)
+        {
+            answer = 1; //sets the correct answer
+            Close(); //closes the form
+        }
+
+        private void InfoFalse_Click(object sender, EventArgs e)
+        {
+            answer = 0; //sets the incorrect answer
+            Close();//closes the form
+        }
+
+    }
+}

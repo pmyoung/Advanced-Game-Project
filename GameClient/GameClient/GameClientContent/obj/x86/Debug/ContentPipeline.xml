@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>test.png</Source>
+      <Name>test</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGame-Midterm\VideoGameNew\GameClient\GameClient\GameClient\bin\x86\Debug\Content\test.xnb</Output>
+      <Time>2013-02-01T14:39:28-05:00</Time>
+    </Item>
+    <Item>
+      <Source>ship1_32x32.png</Source>
+      <Name>ship1_32x32</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGame-Midterm\VideoGameNew\GameClient\GameClient\GameClient\bin\x86\Debug\Content\ship1_32x32.xnb</Output>
+      <Time>2013-03-04T15:23:50-05:00</Time>
+    </Item>
+    <Item>
+      <Source>sprite_error_8x8.png</Source>
+      <Name>sprite_error_8x8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGame-Midterm\VideoGameNew\GameClient\GameClient\GameClient\bin\x86\Debug\Content\sprite_error_8x8.xnb</Output>
+      <Time>2013-02-18T20:43:26-05:00</Time>
+    </Item>
+    <Item>
+      <Source>bullet1_8x8.png</Source>
+      <Name>bullet1_8x8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGame-Midterm\VideoGameNew\GameClient\GameClient\GameClient\bin\x86\Debug\Content\bullet1_8x8.xnb</Output>
+      <Time>2013-02-28T10:36:50-05:00</Time>
+    </Item>
+    <Item>
+      <Source>SpriteFont1.spritefont</Source>
+      <Name>SpriteFont1</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGame-Midterm\VideoGameNew\GameClient\GameClient\GameClient\bin\x86\Debug\Content\SpriteFont1.xnb</Output>
+      <Time>2013-01-20T21:47:02-05:00</Time>
+    </Item>
+    <Item>
+      <Source>bullet2_8x8.png</Source>
+      <Name>bullet2_8x8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGame-Midterm\VideoGameNew\GameClient\GameClient\GameClient\bin\x86\Debug\Content\bullet2_8x8.xnb</Output>
+      <Time>2013-03-04T15:23:50-05:00</Time>
+    </Item>
+    <Item>
+      <Source>moon1_32x32.png</Source>
+      <Name>moon1_32x32</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGame-Midterm\VideoGameNew\GameClient\GameClient\GameClient\bin\x86\Debug\Content\moon1_32x32.xnb</Output>
+      <Time>2013-03-04T15:23:50-05:00</Time>
+    </Item>
+    <Item>
+      <Source>planet1_64x64.png</Source>
+      <Name>planet1_64x64</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGame-Midterm\VideoGameNew\GameClient\GameClient\GameClient\bin\x86\Debug\Content\planet1_64x64.xnb</Output>
+      <Time>2013-03-04T15:23:50-05:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>Reach</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGame-Midterm\VideoGameNew\GameClient\GameClient\GameClientContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGame-Midterm\VideoGameNew\GameClient\GameClient\GameClient\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGame-Midterm\VideoGameNew\GameClient\GameClient\GameClientContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Documents and Settings\Student\Desktop\VideoGameNew\VideoGame-Midterm\VideoGameNew\GameClient\GameClient\GameClient\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2010-08-23T13:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2010-08-23T13:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2010-08-23T13:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2010-08-23T13:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2010-08-23T13:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2010-08-23T13:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2013-02-11T11:48:42.9375-05:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

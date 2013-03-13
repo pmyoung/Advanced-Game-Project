@@ -1,0 +1,64 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+
+namespace Server
+{
+    public partial class ServerSideMenu : Form
+    {
+        public ServerSideConfirm confirm;
+        public int playerNum = 2; //default
+        public int health = 30; //default
+        public int pointsToWin = 100; //default
+
+        public ServerSideMenu()
+        {
+            InitializeComponent();
+        }
+
+        private void IPlayerNumbers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            playerNum = IPlayerNumbers.SelectedIndex + 1;
+        }
+
+        private void IHealth_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                health = Int32.Parse(IHealth.Text);
+            }
+            catch (FormatException ex)
+            {
+                this.Text = "Sorry you must enter a int number";
+                health = 30;
+            }
+
+        }
+
+        private void IPoints_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                pointsToWin = Int32.Parse(IPoints.Text);
+            }
+            catch (FormatException ex)
+            {
+                this.Text = "Sorry you must enter a int number";
+            }
+        }
+
+        private void Start_Click(object sender, EventArgs e)
+        {
+            confirm = new ServerSideConfirm(this);
+            confirm.ShowDialog();
+            if (confirm.answer == 1)
+                Close();
+
+        }
+
+    }
+}

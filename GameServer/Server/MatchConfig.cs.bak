@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+class MatchConfig
+{
+    //static public List<Player> players = new List<Player>();
+    //static public Map map;
+    static public int maxPlayers = 2;
+    static public float gravityConstant = -5;
+    static public int bulletSpeed = 2;
+    static public int reloadRate = 1;
+    static public int maxHealth = 30;
+    static public double accelerationRate = 0.07;
+    static public int rotationRate = 3;
+    static public double brakeRate = 0.07;
+    static public int mass = 10;
+    static public int mapWidth = 800;
+    static public int mapHeight = 600;
+
+    //static public void connectPlayers()
+    //{
+    //    map.getNonGravityObjects().AddRange(players);
+    //}
+}
