@@ -61,3 +61,5 @@ C:\Users\Nick\Documents\GitHub\Advanced-Game-Project\GameServer\Server\obj\Debug
 C:\Users\Nick\Documents\GitHub\Advanced-Game-Project\GameServer\Server\obj\Debug\ResGen.read.1.tlog
 C:\Users\Nick\Documents\GitHub\Advanced-Game-Project\GameServer\Server\obj\Debug\GenerateResource-ResGen.write.1.tlog
 C:\Users\Nick\Documents\GitHub\Advanced-Game-Project\GameServer\Server\obj\Debug\ResGen.write.1.tlog
+C:\Users\Pat\Documents\GitHub\Advanced-Game-Project\GameServer\Server\obj\Debug\Server.exe
+C:\Users\Pat\Documents\GitHub\Advanced-Game-Project\GameServer\Server\obj\Debug\Server.pdb
