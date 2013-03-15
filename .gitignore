@@ -146,3 +146,10 @@ $RECYCLE.BIN/
 
 # Mac crap
 .DS_Store
+
+# =========================
+# specific files to ignore
+# =========================
+
+GameClient.csproj.FileListAbsolute.txt
+GameClientContent.contentproj.FileListAbsolute.txt
