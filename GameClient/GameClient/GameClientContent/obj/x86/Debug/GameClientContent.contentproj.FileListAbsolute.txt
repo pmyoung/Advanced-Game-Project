@@ -1,1 +1,2 @@
 C:\Users\Nick\Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClientContent\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Pat\Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClientContent\obj\x86\Debug\GameClientContent.contentprojResolveAssemblyReference.cache
