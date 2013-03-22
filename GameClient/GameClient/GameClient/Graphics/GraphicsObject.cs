@@ -31,7 +31,7 @@ namespace GameGraphics
 
         private int id;
         private int spriteID;
-        private int colorID;
+        private Color color;
         
         private float x;
         private float y;
@@ -54,7 +54,7 @@ namespace GameGraphics
             this.SetRadius(radius);
             this.SetAngle(angle);
             this.SetSpriteID(spriteID);
-            this.SetColorID(colorID);
+            this.SetColor(colorID);
         }// GraphicsObject
 
         ///<summary>Constructor that accepts all but the colorID as parameters. This is usefull
@@ -74,7 +74,28 @@ namespace GameGraphics
             this.SetRadius(radius);
             this.SetAngle(angle);
             this.SetSpriteID(spriteID);
-            this.SetColorID(DEFAULT_COLOR);
+            this.SetColor(DEFAULT_COLOR);
+        }// GraphicsObject
+
+        /// <summary>Constructor that creates an object with all parameters defined.
+        /// This version allows the color to be defined through a color object rather than using
+        /// a default list of colors based on ID.</summary>
+        ///<param name="id">the ID of the object this should be unique</param>
+        ///<param name="x">the x location of the object</param>
+        ///<param name="y">the y location of the object</param>
+        ///<param name="radius">the radius of the object</param>
+        ///<param name="angle">the angle of the object</param>
+        ///<param name="spriteID">the ID of the sprite the object uses</param>
+        /// <param name="color">The color object that will be used to change the sprites color</param>
+        public GraphicsObject(int id, float x, float y, float radius, float angle, int spriteID, Color color)
+        {
+            this.SetID(id);
+            this.SetX(x);
+            this.SetY(y);
+            this.SetRadius(radius);
+            this.SetAngle(angle);
+            this.SetSpriteID(spriteID);
+            this.SetColor(color);
         }// GraphicsObject
 
         ///<summary>Sets the ID of the GraphicsObject</summary>
@@ -86,7 +107,8 @@ namespace GameGraphics
 
         ///<summary>Sets the X location of the GraphicsObject</summary>
         ///<param name="x">the X location to be given to the object</param>
-        public void SetX(float x){
+        public void SetX(float x)
+        {
             this.x = x;
         }// SetX
 
@@ -119,19 +141,26 @@ namespace GameGraphics
             this.spriteID = spriteID;
         }// SetSpriteID
 
-        ///<summary>Sets the colorID of the GraphicsObject which determines the color.
+        /// <summary> Sets the color that the GraphicsObject will use.</summary>
+        /// <param name="color">The color that will be used</param>
+        public void SetColor(Color color)
+        {
+            this.color = color;
+        }
+
+        ///<summary>Sets the color of the GraphicsObject based on a predefined list of ID's.
         ///If the ID is not in the range of the colorID's then it will use the
         ///default (White)</summary>
         ///<param name="colorID">the ID value of the color to be used</param>
-        public void SetColorID(int colorID)
+        public void SetColor(int colorID)
         {
             if (colorID > 0 && colorID < COLOR.Length)
             {
-                this.colorID = colorID;
+                this.SetColor(COLOR[colorID]);
             }
             else // if we get a value that is not in our range make it white
             {
-                this.colorID = DEFAULT_COLOR;
+                this.SetColor(COLOR[DEFAULT_COLOR]);
             }
         }// SetColorID
 
@@ -181,14 +210,21 @@ namespace GameGraphics
         ///<returns>Returns the given color ID of the object</returns>
         public int GetColorID()
         {
-            return this.colorID;
+            for (int i = 0; i < COLOR.Length; i++)
+            {
+                if (this.GetColor().Equals(COLOR[i])){
+                    return i; // found it
+                }
+            }
+
+            return -1; // this is a unique color
         }// GetColorID
 
         ///<summary>Returns the actual color that this sprite will be using</summary>
         ///<returns>Returns the colorID as a Color object</returns>
         public Color GetColor()
         {
-            return COLOR[this.GetColorID()];
+            return color;
         }// GetColor
 
     }// GrahicsObject
