@@ -29,61 +29,103 @@ namespace Server
         Null        //No command
     }
     
+    //Powerup class (To be moved out and abstracted later)
+    /// <summary>
+    /// This class represents a powerup.
+    /// </summary>
+    class PowerUp : GameObject
+    {
+        string powerUpType;
+        public void randomizePosition()
+        {
+            //Randomly place the powerup somewhere within the map boundaries
+            Random random = new Random();
+            this.x = random.Next(this.radius, MatchConfig.mapWidth+1-this.radius);
+            this.y = random.Next(this.radius, MatchConfig.mapHeight+1-this.radius);
+        }
+        public void randomizeType()
+        {
+            //Randomize the type of the object
+            Random random = new Random();
+            //Choose a random spriteID and set the powerUpType based on the spriteID
+            this.spriteID = random.Next(300, 310);
+            switch (this.spriteID)
+            {
+                case 300:
+                    //Lower reload rate compared to regular bullets
+                    this.powerUpType = "Rapid Fire";
+                    break;
+                case 301:
+                    //The player's gravity is reversed, preventing them from crashing into planets
+                    this.powerUpType = "Anti-Gravity";
+                    break;
+                case 302:
+                    //Fires 3 bullets at a time, at -7, 0 and 7 degrees respectively
+                    this.powerUpType = "Spread Shot - 3";
+                    break;
+                case 303:
+                    //Fires 5 bullets at a time, at -10, -5, 0, 5 and 10 degrees respectively
+                    this.powerUpType = "Spread Shot - 5";
+                    break;
+                case 304:
+                    //Provides upgraded movement speed and turning rate
+                    this.powerUpType = "Engine Upgrade";
+                    break;
+                case 305:
+                    //Homing bullets chase nearby players
+                    this.powerUpType = "Homing Bullet";
+                    break;
+                case 306:
+                    //Big bullets are extra large (Bigger radius) and deal extra damage
+                    this.powerUpType = "Big Bullet";
+                    break;
+                case 307:
+                    //Gravity bullets are regular bullets, only they have a strong gravitational pull (Like moons)
+                    this.powerUpType = "Gravity Bullet";
+                    break;
+                case 308:
+                    //Mines can be implemented as non-moving bullets that spawn behind the player's ship.  Make them affected by gravity
+                    //so that they are eventually destroyed.
+                    this.powerUpType = "Mine";
+                    break;
+                case 309:
+                    //Lazers are very fast-moving bullets that are not affected by gravity
+                    //The sprite for lazers will need to be rendered at a specific angle
+                    this.powerUpType = "Lazer";
+                    break;
+                case 310:
+                    //Ramming plate substantially increases the weight of the player's ship, causing it knock away enemy ships with
+                    //a huge amount of force when it collides with them
+                    this.powerUpType = "Ramming Plate";
+                    break;
+            }
+        }
+
+        public void TreatCollision(Planets object2) {
+        //The powerup spawned on a planet - move it to a new location
+            this.randomizePosition();
+        }
+
+        public void TreatCollision(Player object2) {
+	    //A player collected the powerUp
+            object2.powerUpDuration = 1000;
+            object2.powerUpType = this.powerUpType;
+        }
+    }
+
     //Bullet class (To be moved out and abstracted later)
     /// <summary>
     /// This class represents a bullet fired by a ship .
     /// </summary>
     class Bullet : GameObject
     {
-        float x;
-        float y;
-        int id;
         int ownedby;
-        int radius;
-        float angle;
-        float speedy;
-        float speedx;
 
         //Get and sets for all variables
-        public int bulletid
-        {
-            get { return id; }
-            set { id = value; }
-        }
-        public float bulletx
-        {
-            get { return x; }
-            set { x = value; }
-        }
-        public float bullety
-        {
-            get { return y; }
-            set { y = value; }
-        }
         public int whoshot
         {
             get { return ownedby; }
             set { ownedby = value; }
-        }
-        public int bulletradius
-        {
-            get { return radius; }
-            set { radius = value; }
-        }
-        public float bulletangle
-        {
-            get { return angle; }
-            set { angle = value; }
-        }
-        public float bulletspeedy
-        {
-            get { return speedy; }
-            set { speedy = value; }
-        }
-        public float bulletspeedx
-        {
-            get { return speedx; }
-            set { speedx = value; }
         }
 
         //Collision detection
@@ -92,7 +134,7 @@ namespace Server
         /// </summary>
         /// <param name="object2">An instance to a GameObject</param>
         /// <returns>Bool, true if them colide, false otherwise</returns>
-        public override bool checkCollision(GameObject object2)
+        public bool checkCollision(GameObject object2)
         {
             if (this == object2) return false;
             float distance = (float)(Math.Sqrt(Math.Pow((this.x - object2.x), 2) + Math.Pow(this.y - object2.y, 2)));
@@ -100,107 +142,24 @@ namespace Server
             return false;
         }
 
-        /// <summary>
-        /// Check the collision between the bullet and a player instance
-        /// </summary>
-        /// <param name="object2">An instance to a player</param>
-        /// <returns>Bool, true if them colide, false otherwise</returns>
-        public override bool checkCollision(player object2)
-        {
-            float distance = (float)(Math.Sqrt(Math.Pow((this.bulletx - object2.playerx), 2) + Math.Pow(this.bullety - object2.playery, 2)));
-            if (distance < this.bulletradius + object2.playerradius) return true;
-            return false;
-        }
-
-        /// <summary>
-        /// Check the collision between the bullet and a Planets instance
-        /// </summary>
-        /// <param name="object2">An instance to a Planets</param>
-        /// <returns>Bool, true if them colide, false otherwise</returns>
-        public override bool checkCollision(Planets object2)
-        {
-            float distance = (float)(Math.Sqrt(Math.Pow((this.bulletx - object2.planetx), 2) + Math.Pow(this.bullety - object2.planety, 2)));
-            if (distance < this.bulletradius + object2.planetradius) return true;
-            return false;
-        }
-
-        /// <summary>
-        /// Check the collision between the bullet and a Bullet instance
-        /// </summary>
-        /// <param name="object2">An instance to a Bullet</param>
-        /// <returns>Bool, true if them colide, false otherwise</returns>
-        public override bool checkCollision(Bullet object2)
-        {
-            if (this == object2) return false;
-            float distance = (float)(Math.Sqrt(Math.Pow((this.bulletx - object2.bulletx), 2) + Math.Pow(this.bullety - object2.bullety, 2)));
-            if (distance < this.bulletradius + object2.bulletradius) return true;
-            return false;
-        }
-
-        public override void treatCollision(GameObject object2)
-        { }
-        public override void treatCollision(Bullet object2)
-        { }
-        public override void treatCollision(Planets object2)
-        { }
-        public override void treatCollision(player object2)
-        { }
     }
 
     /// <summary>
     /// This class represents a player's ship including the ships variables.
     /// </summary>
-    class player : GameObject
+    class Player : GameObject
     {
-        float x;
-        float y;
-        int id;
-        float angle;
-        int radius;
-        float speedy;
-        float speedx;
         string name;
         int bulletcount;
+        public int powerUpDuration;
+        public int reloadTime;
+        public string powerUpType;
         //Get and sets for all variables
-        public float playerx
-        {
-            get { return x; }
-            set { x = value; }
-        }
+
         public int bcount
         {
             get { return bulletcount; }
             set { bulletcount = value; }
-        }
-
-        public float playerangle
-        {
-            get { return angle; }
-            set { angle = value; }
-        }
-
-        public int playerradius
-        {
-            get { return radius; }
-            set { radius = value; }
-        }
-
-        public float playery
-        {
-            get { return y; }
-            set { y = value; }
-        }
-
-        public float playerspeedy
-        {
-            get { return speedy; }
-            set { speedy = value; }
-        }
-
-        public float playerspeedx
-        {
-            get { return speedx; }
-            set { speedx = value; }
         }
 
         public string playername
@@ -208,77 +167,17 @@ namespace Server
             get { return name; }
             set { name = value; }
         }
-        public int playerid
-        {
-            get { return id; }
-            set { id = value; }
-        }
-
-        //Collision detection (to be modified for explosions later)
-        /// <summary>
-        /// Check the collision between the ship and a GameObject instance
-        /// </summary>
-        /// <param name="object2">An instance to a GameObject</param>
-        /// <returns>Bool, true if them colide, false otherwise</returns>
-        public override bool checkCollision(GameObject object2)
-        {
-            if (this == object2) return false;
-            float distance = (float)(Math.Sqrt(Math.Pow((this.x - object2.x), 2) + Math.Pow(this.y - object2.y, 2)));
-            if (distance < this.radius + object2.radius) return true;
-            return false;
-        }
-        
-        /// <summary>
-        /// Check the collision between the ship and a player instance
-        /// </summary>
-        /// <param name="object2">An instance to a player</param>
-        /// <returns>Bool, true if them colide, false otherwise</returns>
-        public override bool checkCollision(player object2)
-        {
-            if (this == object2) return false;
-            float distance = (float)(Math.Sqrt(Math.Pow((this.playerx - object2.playerx), 2) + Math.Pow(this.playery - object2.playery, 2)));
-            if (distance < this.playerradius + object2.playerradius) return true;
-            return false;
-        }
-        
-        /// <summary>
-        /// Check the collision between the ship and a Planets instance
-        /// </summary>
-        /// <param name="object2">An instance to a Planets</param>
-        /// <returns>Bool, true if them colide, false otherwise</returns>
-        public override bool checkCollision(Planets object2)
-        {
-            float distance = (float)(Math.Sqrt(Math.Pow((this.playerx - object2.planetx), 2) + Math.Pow(this.playery - object2.planety, 2)));
-            if (distance < this.playerradius + object2.planetradius) return true;
-            return false;
-        }
-        
-        /// <summary>
-        /// Check the collision between the ship and a Bullet instance
-        /// </summary>
-        /// <param name="object2">An instance to a Bullet</param>
-        /// <returns>Bool, true if them colide, false otherwise</returns>
-        public override bool checkCollision(Bullet object2)
-        {
-            float distance = (float)(Math.Sqrt(Math.Pow((this.playerx - object2.bulletx), 2) + Math.Pow(this.playery - object2.bullety, 2)));
-            if (distance < this.playerradius + object2.bulletradius) return true;
-            return false;
-        }
-        public override void treatCollision(GameObject object2)
-        {}
-        public override void treatCollision(Bullet object2)
-        {}
         
         /// <summary>
         /// In case a collison is detected, this function should be called to treat how a player instance will respond in collison with another object
         /// </summary>
         /// <param name="object2">An instance to a Planets</param>
-        public override void treatCollision(Planets object2)
+        public void treatCollision(Planets object2)
         {
             if (object2 is Planets)
             {
-                this.speedx = this.speedx * (float)(-0.25);
-                this.speedy = this.speedy * (float)(-0.25);
+                this.speedX = this.speedX * (float)(-0.25);
+                this.speedY = this.speedY * (float)(-0.25);
             }
         }
         
@@ -286,19 +185,14 @@ namespace Server
         /// In case a collison is detected, this function should be called to treat how a player instance will respond in collison with another object
         /// </summary>
         /// <param name="object2">An instance to a player</param>
-        public override void treatCollision(player object2)
+        public void treatCollision(Player object2)
         {
-            if (object2 is player)
-            {
                 //Give object that is being collided with the same speed but add the colliders speed to it to simulate a bounce.
-                object2.playerspeedx = object2.playerspeedx + (this.playerspeedx * (float)(0.8));
-                object2.playerspeedy = object2.playerspeedy + (this.playerspeedy * (float)(0.8));
+                object2.speedX = object2.speedX + (this.speedX * (float)(0.8));
+                object2.speedY = object2.speedY + (this.speedY * (float)(0.8));
                 //make the colliders' speed the reverse because of collision.
-                this.playerspeedx = this.playerspeedx * (float)(-0.25);
-                this.playerspeedy = this.playerspeedy * (float)(-0.25);
-                
-            }
-
+                this.speedX = this.speedX * (float)(-0.25);
+                this.speedY = this.speedY * (float)(-0.25);
         }
     }
 
@@ -308,85 +202,36 @@ namespace Server
     /// </summary>
     class Planets : GameObject
     {
-        float x;
-        float y;
-        int id;
-        int radius;
-        int mass;
-        //Get and sets for all variables
-        public int planetid
-        {
-            get { return id; }
-            set { id = value; }
-        }
-        public float planetx
-        {
-            get { return x; }
-            set { x = value; }
-        }
-        public float planety
-        {
-            get { return y; }
-            set { y = value; }
-        }
-        public int planetradius
-        {
-            get { return radius; }
-            set { radius = value; }
-        }
-        public int planetmass
-        {
-            get { return mass; }
-            set { mass = value; }
-        }
-        //Collision detection
-        public override bool checkCollision(GameObject object2)
-        { return false; }
-        public override bool checkCollision(player object2)
-        { return false; }
-        public override bool checkCollision(Planets object2)
-        { return false; }
-        public override bool checkCollision(Bullet object2)
-        { return false; }
-        public override void treatCollision(GameObject object2)
-        { }
-        public override void treatCollision(player object2)
-        { }
-        public override void treatCollision(Bullet object2)
-        { }
-        public override void treatCollision(Planets object2)
-        { }
-
         /// <summary>
         /// This function changes the speed of the object based on its proximity to its Planet instance
         /// </summary>
         /// <param name="p">An instance to a player</param>
-        public void applyGravity(player p)
+        public void applyGravity(Player p)
         {
             //Gravity Calculations between players and the planet(object producing the gravity).
             float G = MatchConfig.gravityConstant;
 
-            double distanceG = Math.Sqrt((Math.Pow(p.playerx - this.planetx, 2) + Math.Pow(p.playery - this.planety, 2)));
-            double speedVector = (float)((G * this.planetmass) / Math.Pow(distanceG, 2));
-            double deltaY = (p.playery - this.planety);
-            double deltaX = (p.playerx - this.planetx);
+            double distanceG = Math.Sqrt((Math.Pow(p.x - this.x, 2) + Math.Pow(p.y - this.y, 2)));
+            double speedVector = (float)((G * this.mass) / Math.Pow(distanceG, 2));
+            double deltaY = (p.y - this.y);
+            double deltaX = (p.x - this.x);
             double angleDegree = Math.Atan(deltaY / deltaX);// * 180 / Math.PI;
             //float rad = (float)(Math.PI / 180) * o.angle;
-            if (p.playerx != this.planetx)
+            if (p.x != this.x)
             {
                 //speedX += (float)(Math.Cos(angleDegree) * speedVector);
-                if (p.playerx > this.planetx)
-                    p.playerspeedx -= (float)Math.Abs((Math.Cos(angleDegree) * speedVector));
+                if (p.x > this.x)
+                    p.speedX -= (float)Math.Abs((Math.Cos(angleDegree) * speedVector));
                 else
-                    p.playerspeedx += (float)Math.Abs((Math.Cos(angleDegree) * speedVector));
+                    p.speedX += (float)Math.Abs((Math.Cos(angleDegree) * speedVector));
             }
-            if (p.playery != this.planety)
+            if (p.y != this.y)
             {
                 //speedY += (float)(Math.Sin(angleDegree) * speedVector);
-                if (p.playery < this.planety)
-                    p.playerspeedy += (float)Math.Abs((Math.Sin(angleDegree) * speedVector));
+                if (p.y < this.y)
+                    p.speedY += (float)Math.Abs((Math.Sin(angleDegree) * speedVector));
                 else
-                    p.playerspeedy -= (float)Math.Abs((Math.Sin(angleDegree) * speedVector));
+                    p.speedY -= (float)Math.Abs((Math.Sin(angleDegree) * speedVector));
             }
         }
 
@@ -399,27 +244,27 @@ namespace Server
             //Gravity Calculations between bullets and the planet(object that is producing gravity)
             float G = MatchConfig.gravityConstant;
 
-            double distanceG = Math.Sqrt((Math.Pow(b.bulletx - this.planetx, 2) + Math.Pow(b.bullety - this.planety, 2)));
-            double speedVector = (float)((G * this.planetmass) / Math.Pow(distanceG, 2));
-            double deltaY = (b.bullety - this.planety);
-            double deltaX = (b.bulletx - this.planetx);
+            double distanceG = Math.Sqrt((Math.Pow(b.x - this.x, 2) + Math.Pow(b.y - this.y, 2)));
+            double speedVector = (float)((G * this.mass) / Math.Pow(distanceG, 2));
+            double deltaY = (b.y - this.y);
+            double deltaX = (b.x - this.x);
             double angleDegree = Math.Atan(deltaY / deltaX);// * 180 / Math.PI;
             //float rad = (float)(Math.PI / 180) * o.angle;
-            if (b.bulletx != this.planetx)
+            if (b.x != this.x)
             {
                 //speedX += (float)(Math.Cos(angleDegree) * speedVector);
-                if (b.bulletx > this.planetx)
-                    b.bulletspeedx -= (float)Math.Abs((Math.Cos(angleDegree) * speedVector));
+                if (b.x > this.x)
+                    b.speedX -= (float)Math.Abs((Math.Cos(angleDegree) * speedVector));
                 else
-                    b.bulletspeedx += (float)Math.Abs((Math.Cos(angleDegree) * speedVector));
+                    b.speedX+= (float)Math.Abs((Math.Cos(angleDegree) * speedVector));
             }
-            if (b.bullety != this.planety)
+            if (b.y != this.y)
             {
                 //speedY += (float)(Math.Sin(angleDegree) * speedVector);
-                if (b.bullety < this.planety)
-                    b.bulletspeedy += (float)Math.Abs((Math.Sin(angleDegree) * speedVector));
+                if (b.y < this.y)
+                    b.speedY+= (float)Math.Abs((Math.Sin(angleDegree) * speedVector));
                 else
-                    b.bulletspeedy -= (float)Math.Abs((Math.Sin(angleDegree) * speedVector));
+                    b.speedY-= (float)Math.Abs((Math.Sin(angleDegree) * speedVector));
             }
         }
     }
@@ -440,7 +285,7 @@ namespace Server
         //The collection of all clients logged into the room (an array of type ClientInfo)
         ArrayList clientList;
         //Lists of players, planets, bullets and objects to remove (for sending to client)
-        List<player> playerList = new List<player>();
+        List<Player> playerList = new List<Player>();
         List<Planets> planetList = new List<Planets>();
         List<Bullet> bulletList = new List<Bullet>();
         List<int> removeids = new List<int>();
@@ -506,7 +351,7 @@ namespace Server
         {
             //Required variables
             byte[] message;
-            player playerbullet = null;
+            Player playerbullet = null;
             List<Bullet> toRemove = new List<Bullet>();
             Data msgToSend = new Data();
             //Loop forever
@@ -518,40 +363,40 @@ namespace Server
                 //Update planets
                 foreach (Planets planet in planetList)
                 {
-                    planet.planetx = 400;
-                    planet.planety = 300;
+                    planet.x = 400;
+                    planet.y = 300;
                 }
                 //Update players
-                foreach (player p in playerList)
+                foreach (Player p in playerList)
                 {
                     //Adjust placement by speed
-                    p.playerx += p.playerspeedx;
-                    p.playery += p.playerspeedy;
+                    p.x += p.speedX;
+                    p.y += p.speedY;
 
                     //Collision Detection between Player and Border. For now, Players will bounce off the border in opposite direction.
-                    if (p.playerx < 0)
+                    if (p.x < 0)
                     {
-                        p.playerspeedx = p.playerspeedx * (float)(-0.1);
-                        p.playerx = 0;
+                        p.speedX = p.speedX * (float)(-0.1);
+                        p.x = 0;
                     }
-                    else if (p.playerx > MatchConfig.mapWidth)
+                    else if (p.x > MatchConfig.mapWidth)
                     {
-                        p.playerspeedx = p.playerspeedx * (float)(-0.1);
-                        p.playerx = MatchConfig.mapWidth;
+                        p.speedX = p.speedX * (float)(-0.1);
+                        p.x = MatchConfig.mapWidth;
                     }
-                    if (p.playery < 0)
+                    if (p.y < 0)
                     {
-                        p.playerspeedy = p.playerspeedy * (float)(-0.1);
-                        p.playery = 0;
+                        p.speedY = p.speedY * (float)(-0.1);
+                        p.y = 0;
                     }
-                    else if (p.playery > MatchConfig.mapHeight)
+                    else if (p.y > MatchConfig.mapHeight)
                     {
-                        p.playerspeedy = p.playerspeedy * (float)(-0.1);
-                        p.playery = MatchConfig.mapHeight;
+                        p.speedY = p.speedY * (float)(-0.1);
+                        p.y = MatchConfig.mapHeight;
                     }
                     
                     //Collision Detection between Players. For now, Players will bounce off of each other. No damage to players.
-                    foreach (player p2 in playerList)
+                    foreach (Player p2 in playerList)
                     {
                         if (p.checkCollision(p2))
                         {
@@ -576,42 +421,42 @@ namespace Server
                 foreach (Bullet b in bulletList)
                 {
                     //Check who shot each bullet, (required for the max bullet count per player)
-                    foreach (player playerp in playerList)
+                    foreach (Player playerp in playerList)
                     {
-                        if (playerp.playerid == b.whoshot)
+                        if (playerp.id == b.whoshot)
                         {
                             playerbullet = playerp;
                         }
                     }
 
                     //Bullet Movement
-                    b.bulletx += b.bulletspeedx;
-                    b.bullety += b.bulletspeedy;
+                    b.x += b.speedX;
+                    b.y += b.speedY;
                     
                     //Collision Detection between bullets and border. At this time, bullets will disappear after they reach the border.
-                    if (b.bulletx < 0)
+                    if (b.x < 0)
                     {
                         playerbullet.bcount--;
                         toRemove.Add(b);
                     }
-                    else if (b.bulletx > MatchConfig.mapWidth)
+                    else if (b.x > MatchConfig.mapWidth)
                     {
                         playerbullet.bcount--;
                         toRemove.Add(b);
                     }
-                    if (b.bullety < 0)
+                    if (b.y < 0)
                     {
                         playerbullet.bcount--;
                         toRemove.Add(b);
                     }
-                    else if (b.bullety > MatchConfig.mapHeight)
+                    else if (b.y > MatchConfig.mapHeight)
                     {
                         playerbullet.bcount--;
                         toRemove.Add(b);
                     }
 
                     //Collision Detection between players and bullets. For now, the bullets will disappear when they collide with players. Players will remain.
-                    foreach (player p in playerList)
+                    foreach (Player p in playerList)
                     {
                         if (b.checkCollision(p))
                         {
@@ -692,27 +537,27 @@ namespace Server
                         if (playercount == 0)
                         {
                             //Setup player 1
-                            player player1 = new player();
+                            Player player1 = new Player();
                             ClientInfo clientInfo = new ClientInfo();
                             clientInfo.endpoint = epSender;
                             clientInfo.strName = msgReceived.strName;
                             msgToSend.cmdCommand = Command.Login;
-                            msgToSend.playerID = playercount;
+                            msgToSend.id = playercount;
                             clientList.Add(clientInfo);
-                            player1.playerx = 100;
-                            player1.playery = 100;
-                            player1.playerradius = 16;
+                            player1.x = 100;
+                            player1.y = 100;
+                            player1.radius = 16;
                             player1.playername = msgReceived.strName;
-                            player1.playerid = playercount;
+                            player1.id = playercount;
                             playerList.Add(player1);
                             playercount = playercount + 1;
 
                             //Setup planets (1 for now)
                             Planets planet = new Planets();
-                            planet.planetx = 400;
-                            planet.planety = 300;
-                            planet.planetradius = 32;
-                            planet.planetmass = 150;
+                            planet.x = 400;
+                            planet.y = 300;
+                            planet.radius = 32;
+                            planet.mass = 150;
                             planetList.Add(planet);
                             planetcount = 1;
 
@@ -724,18 +569,18 @@ namespace Server
                         else
                         {
                             //Setup player 2
-                            player player2 = new player();
+                            Player player2 = new Player();
                             ClientInfo clientInfo = new ClientInfo();
                             clientInfo.endpoint = epSender;
                             clientInfo.strName = msgReceived.strName;
-                            msgToSend.playerID = playercount;
-                            player2.playerid = playercount;
+                            msgToSend.id = playercount;
+                            player2.id = playercount;
                             clientList.Add(clientInfo);
-                            player2.playerx = 700;
-                            player2.playery = 500;
-                            player2.playerradius = 16;
+                            player2.x = 700;
+                            player2.y = 500;
+                            player2.radius = 16;
                             player2.playername = msgReceived.strName;
-                            player2.playerid = playercount;
+                            player2.id = playercount;
                             playerList.Add(player2);
                             playercount = playercount + 1;
 
@@ -876,14 +721,14 @@ namespace Server
         private Data PlayerAction(Data msgReceived)
         {
             //Required variables
-            player playermoved = null;
+            Player playermoved = null;
             double accelerate = 0;
             int rot = 0;
 
             //Figure out who is making the action.
-            foreach (player playerp in playerList)
+            foreach (Player playerp in playerList)
             {
-                if (playerp.playerid == msgReceived.playerID)
+                if (playerp.id == msgReceived.id)
                 {
                     playermoved = playerp;
                 }
@@ -896,7 +741,7 @@ namespace Server
             {
                 rot++;
                 rot = rot * MatchConfig.rotationRate;
-                playermoved.playerangle += rot;
+                playermoved.angle += rot;
 
             }
             //Rotate left
@@ -904,7 +749,7 @@ namespace Server
             {
                 rot++;
                 rot = rot * MatchConfig.rotationRate;
-                playermoved.playerangle -= rot;
+                playermoved.angle -= rot;
 
             }
             //Increase speed
@@ -917,9 +762,9 @@ namespace Server
                 // than fixed 8-directional (N, NE, E, SE, S, SW, W, NW) movement
                 accelerate++;
                 accelerate = accelerate * MatchConfig.accelerationRate;
-                float rad = (float)(Math.PI / 180) * playermoved.playerangle;
-                playermoved.playerspeedx += (float)((float)Math.Sin(rad) * accelerate);
-                playermoved.playerspeedy += -1 * (float)((float)Math.Cos(rad) * accelerate);
+                float rad = (float)(Math.PI / 180) * playermoved.angle;
+                playermoved.speedX += (float)((float)Math.Sin(rad) * accelerate);
+                playermoved.speedY += -1 * (float)((float)Math.Cos(rad) * accelerate);
                 //Note we don't actually increase the x or y here, just the speed.
             }
             //Decrease speed
@@ -927,9 +772,9 @@ namespace Server
             {
                 accelerate++;
                 accelerate = accelerate * MatchConfig.brakeRate;
-                float rad = (float)(Math.PI / 180) * playermoved.playerangle;
-                playermoved.playerspeedx -= (float)((float)Math.Sin(rad) * accelerate);
-                playermoved.playerspeedy -= -1 * (float)((float)Math.Cos(rad) * accelerate);
+                float rad = (float)(Math.PI / 180) * playermoved.angle;
+                playermoved.speedX -= (float)((float)Math.Sin(rad) * accelerate);
+                playermoved.speedY -= -1 * (float)((float)Math.Cos(rad) * accelerate);
                 //Note we don't actually decrease the x or y here, just the speed.
 
             }
@@ -941,29 +786,29 @@ namespace Server
                 {
                     playermoved.bcount++;
                     Bullet bullet = new Bullet();
-                    bullet.bulletspeedx = playermoved.playerspeedx;
+                    bullet.speedX= playermoved.speedX;
                     //Setup bullet's speeds
-                    if (playermoved.playerspeedx >= 0)
+                    if (playermoved.speedX >= 0)
                     {
-                        bullet.bulletspeedx = (float)(playermoved.playerspeedx + Math.Sin((Math.PI / 180) * playermoved.playerangle) * MatchConfig.bulletSpeed);
+                        bullet.speedX= (float)(playermoved.speedX + Math.Sin((Math.PI / 180) * playermoved.angle) * MatchConfig.bulletSpeed);
                     }
                     else
                     {
-                        bullet.bulletspeedx = (float)(playermoved.playerspeedx + Math.Sin((Math.PI / 180) * playermoved.playerangle) * MatchConfig.bulletSpeed);
+                        bullet.speedX= (float)(playermoved.speedX + Math.Sin((Math.PI / 180) * playermoved.angle) * MatchConfig.bulletSpeed);
                     }
-                    if (playermoved.playerspeedy >= 0)
+                    if (playermoved.speedY >= 0)
                     {
-                        bullet.bulletspeedy = ((float)(playermoved.playerspeedy + (-1 * (Math.Cos((Math.PI / 180) * playermoved.playerangle))) * MatchConfig.bulletSpeed));
+                        bullet.speedY= ((float)(playermoved.speedY + (-1 * (Math.Cos((Math.PI / 180) * playermoved.angle))) * MatchConfig.bulletSpeed));
                     }
                     else
                     {
-                        bullet.bulletspeedy = ((float)(playermoved.playerspeedy + (-1 * (Math.Cos((Math.PI / 180) * playermoved.playerangle))) * MatchConfig.bulletSpeed));
+                        bullet.speedY= ((float)(playermoved.speedY + (-1 * (Math.Cos((Math.PI / 180) * playermoved.angle))) * MatchConfig.bulletSpeed));
                     }
                     //Setup bullet location
-                    bullet.bulletx = (float)(playermoved.playerx + Math.Sin((Math.PI / 180) * playermoved.playerangle) * (playermoved.playerradius + 10));
-                    bullet.bullety = (float)(playermoved.playery + (-1 * (Math.Cos((Math.PI / 180) * playermoved.playerangle))) * (playermoved.playerradius + 10));
+                    bullet.x = (float)(playermoved.x + Math.Sin((Math.PI / 180) * playermoved.angle) * (playermoved.radius + 10));
+                    bullet.y = (float)(playermoved.y + (-1 * (Math.Cos((Math.PI / 180) * playermoved.angle))) * (playermoved.radius + 10));
                     //Add who shot the bullet
-                    bullet.whoshot = playermoved.playerid;
+                    bullet.whoshot = playermoved.id;
                     //Increase the overall bullet count (used for ids)
                     bulletcount++;
                     bullet.id = bulletcount;
@@ -1001,7 +846,7 @@ namespace Server
             this.cmdCommand = (Command)BitConverter.ToInt32(data, 0);
 
             //The next four store the length of the name
-            this.playerID = BitConverter.ToInt32(data, 4);
+            this.id = BitConverter.ToInt32(data, 4);
 
             int nameLen = BitConverter.ToInt32(data, 8);
             //The next four store the length of the message
@@ -1029,7 +874,7 @@ namespace Server
         /// <param name="playercount">The number of player currently in the game</param>
         /// <param name="planetList">A list that contains the Planets instance</param>
         ///  
-        public byte[] ToByte(List<player> playerList, List<Bullet> bulletList, List<int> removeids, int playercount, List<Planets> planetList)
+        public byte[] ToByte(List<Player> playerList, List<Bullet> bulletList, List<int> removeids, int playercount, List<Planets> planetList)
         {
             List<byte> result = new List<byte>();
 
@@ -1040,23 +885,23 @@ namespace Server
             result.AddRange(BitConverter.GetBytes(playercount));
 
 
-            result.AddRange(BitConverter.GetBytes((int)playerID));
+            result.AddRange(BitConverter.GetBytes((int)id));
 
             //Next add locations of every player
-            foreach (player p in playerList)
+            foreach (Player p in playerList)
             {   //May need names/angles later.
                 //Add the length of the name
-                result.AddRange(BitConverter.GetBytes((int)p.playerx));
-                result.AddRange(BitConverter.GetBytes((int)p.playery));
-                result.AddRange(BitConverter.GetBytes((int)p.playerangle));
+                result.AddRange(BitConverter.GetBytes((int)p.x));
+                result.AddRange(BitConverter.GetBytes((int)p.y));
+                result.AddRange(BitConverter.GetBytes((int)p.angle));
 
             }
 
             result.AddRange(BitConverter.GetBytes((int)planetList.Count));
             foreach (Planets planet in planetList)
             {
-                result.AddRange(BitConverter.GetBytes((int)planet.planetx));
-                result.AddRange(BitConverter.GetBytes((int)planet.planety));
+                result.AddRange(BitConverter.GetBytes((int)planet.x));
+                result.AddRange(BitConverter.GetBytes((int)planet.y));
             }
 
             //Add the length of the name
@@ -1087,8 +932,8 @@ namespace Server
             for (int j = 0; j < (int)bulletList.Count; j++)//Bullet b in bulletList
             {
                 //TODO:angle of bullet if image is pointed
-                result.AddRange(BitConverter.GetBytes((int)bulletList[j].bulletx));
-                result.AddRange(BitConverter.GetBytes((int)bulletList[j].bullety));
+                result.AddRange(BitConverter.GetBytes((int)bulletList[j].x));
+                result.AddRange(BitConverter.GetBytes((int)bulletList[j].y));
 
             }
 
@@ -1098,7 +943,7 @@ namespace Server
 
         public string strName;      //Name by which the client logs into the room
         public string strMessage;   //Message text
-        public int playerID;
+        public int id;
         public Command cmdCommand;  //Command type (login, logout, send message, etcetera)
     }//End class data
 }//End Server Namespace

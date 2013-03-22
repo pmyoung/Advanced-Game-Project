@@ -20,11 +20,8 @@ namespace Server
         public int radius;
         public int mass;
         public int spriteID;
-        public int colorID;
         public int id;
-        
         static int nextId = 2;
-
         public float speedX;
         public float speedY;
 
@@ -55,12 +52,12 @@ namespace Server
         //Checks if two objects have collided, returning true if they have or false if they haven't
         //Collision detection is based upon the radius of the objects and the distance between them
         /// <summary>
-        /// checkCollision2() checks the collision between two GameObjects.
+        /// checkCollision() checks the collision between two GameObjects.
         /// </summary>
         /// <param name="object2">An instance to a GameObject</param>
         /// <returns>True, if first GameObject collided with second GameObject or false, otherwise.</returns>
         /// <remarks>Collision detection is based upon the radius of the objects and the distance between them.</remarks>
-        public virtual bool checkCollision2(GameObject object2)
+        public virtual bool checkCollision(GameObject object2)
         {
             //if (this == object2) return false;
             float distance = (float)(Math.Sqrt(Math.Pow((this.x - object2.x), 2) + Math.Pow(this.y - object2.y, 2)));
@@ -68,58 +65,6 @@ namespace Server
             return false;
         }
 
-        /// <summary>
-        /// Check the collision between the GameObject and a GameObject instance
-        /// </summary>
-        /// <param name="object2">An instance to a GameObject</param>
-        /// <returns>Bool, true if them colide, false otherwise</returns>
-        public abstract bool checkCollision(GameObject object2);
-        /// <summary>
-        /// Check the collision between the GameObject and a player instance
-        /// </summary>
-        /// <param name="object2">An instance to a player</param>
-        /// <returns>Bool, true if them colide, false otherwise</returns>
-        public abstract bool checkCollision(player object2);
-        /// <summary>
-        /// Check the collision between the GameObject and a Planets instance
-        /// </summary>
-        /// <param name="object2">An instance to a Planets</param>
-        /// <returns>Bool, true if them colide, false otherwise</returns>
-        public abstract bool checkCollision(Planets object2);
-        /// <summary>
-        /// Check the collision between the bullet and a Bullet instance
-        /// </summary>
-        /// <param name="object2">An instance to a Bullet</param>
-        /// <returns>Bool, true if them colide, false otherwise</returns>
-        public abstract bool checkCollision(Bullet object2);
-        /// <summary>
-        /// treatCollision() executes the code when a GameObject collides with a GameObject
-        /// </summary>
-        /// <param name="object2">An instance of GameObject</param>
-        /// <remarks>In case a collison is detected, this function should be called to treat how a GameObject instance will respond in collison with another object</remarks>
-        public abstract void treatCollision(GameObject object2);
-        /// <summary>
-        /// treatCollision() executes the code when a GameObject collides with a player
-        /// </summary>
-        /// <param name="object2">An instance of player</param>
-        /// <remarks>In case a collison is detected, this function should be called to treat how a GameObject instance will respond in collison with another object</remarks>
-        public abstract void treatCollision(player object2);
-        /// <summary>
-        /// treatCollision() executes the code when a GameObject collides with a Planet
-        /// </summary>
-        /// <param name="object2">An instance of Planets</param>
-        /// <remarks>In case a collison is detected, this function should be called to treat how a GameObject instance will respond in collison with another object</remarks>
-        public abstract void treatCollision(Planets object2);
-        /// <summary>
-        /// treatCollision() executes the code when a GameObject collides with a
-        /// </summary>
-        /// <param name="object2">An instance of Bullet</param>
-        /// <remarks>In case a collison is detected, this function should be called to treat how a GameObject instance will respond in collison with another object</remarks>
-        public abstract void treatCollision(Bullet object2);
-        /// <summary>
-        /// outOfBounds() is for when GameObjects reach the boundary of the Game.
-        /// </summary>
-        /// <remarks>If an object moves out of the world boundary, switch it's direction of motion. Bullets should be an exception to this rule (Override function?) as they should be destroyed when reaching the edge of the world</remarks>
         public virtual void outOfBounds()
         {
             if (x < 0)

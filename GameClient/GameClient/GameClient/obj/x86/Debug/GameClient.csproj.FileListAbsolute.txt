@@ -33,3 +33,21 @@ C:\Users\Pat\Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameCl
 C:\Users\Pat\Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\obj\x86\Debug\GameClient.csproj.GenerateResource.Cache
 C:\Users\Pat\Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\obj\x86\Debug\GameClient.exe
 C:\Users\Pat\Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\obj\x86\Debug\GameClient.pdb
+C:\Documents and Settings\Student\My Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\bin\x86\Debug\Content\test.xnb
+C:\Documents and Settings\Student\My Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\bin\x86\Debug\Content\ship1_32x32.xnb
+C:\Documents and Settings\Student\My Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\bin\x86\Debug\Content\sprite_error_8x8.xnb
+C:\Documents and Settings\Student\My Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\bin\x86\Debug\Content\bullet1_8x8.xnb
+C:\Documents and Settings\Student\My Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\bin\x86\Debug\Content\bullet2_8x8.xnb
+C:\Documents and Settings\Student\My Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\bin\x86\Debug\Content\moon1_32x32.xnb
+C:\Documents and Settings\Student\My Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\bin\x86\Debug\Content\planet1_64x64.xnb
+C:\Documents and Settings\Student\My Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\bin\x86\Debug\Content\SpriteFont1.xnb
+C:\Documents and Settings\Student\My Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\bin\x86\Debug\GameClient.exe
+C:\Documents and Settings\Student\My Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\bin\x86\Debug\GameClient.pdb
+C:\Documents and Settings\Student\My Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Student\My Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Documents and Settings\Student\My Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\obj\x86\Debug\Client.ClientConfirm.resources
+C:\Documents and Settings\Student\My Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\obj\x86\Debug\Client.ClientSideMenu.resources
+C:\Documents and Settings\Student\My Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Student\My Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Student\My Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\obj\x86\Debug\GameClient.exe
+C:\Documents and Settings\Student\My Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\obj\x86\Debug\GameClient.pdb

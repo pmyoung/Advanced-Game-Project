@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Nick\Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\bin\x86\Debug\Content\test.xnb</Output>
-      <Time>2013-03-13T14:52:58.885-04:00</Time>
+      <Output>C:\Documents and Settings\Student\My Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\bin\x86\Debug\Content\test.xnb</Output>
+      <Time>2013-03-22T14:28:40.460875-04:00</Time>
     </Item>
     <Item>
       <Source>ship1_32x32.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Nick\Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\bin\x86\Debug\Content\ship1_32x32.xnb</Output>
-      <Time>2013-03-13T14:52:58.884-04:00</Time>
+      <Output>C:\Documents and Settings\Student\My Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\bin\x86\Debug\Content\ship1_32x32.xnb</Output>
+      <Time>2013-03-22T14:28:40.460875-04:00</Time>
     </Item>
     <Item>
       <Source>sprite_error_8x8.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Nick\Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\bin\x86\Debug\Content\sprite_error_8x8.xnb</Output>
-      <Time>2013-03-13T14:52:58.884-04:00</Time>
+      <Output>C:\Documents and Settings\Student\My Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\bin\x86\Debug\Content\sprite_error_8x8.xnb</Output>
+      <Time>2013-03-22T14:28:40.460875-04:00</Time>
     </Item>
     <Item>
       <Source>bullet1_8x8.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Nick\Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\bin\x86\Debug\Content\bullet1_8x8.xnb</Output>
-      <Time>2013-03-13T14:52:58.881-04:00</Time>
+      <Output>C:\Documents and Settings\Student\My Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\bin\x86\Debug\Content\bullet1_8x8.xnb</Output>
+      <Time>2013-03-22T14:28:40.44525-04:00</Time>
     </Item>
     <Item>
       <Source>bullet2_8x8.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Nick\Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\bin\x86\Debug\Content\bullet2_8x8.xnb</Output>
-      <Time>2013-03-13T14:52:58.882-04:00</Time>
+      <Output>C:\Documents and Settings\Student\My Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\bin\x86\Debug\Content\bullet2_8x8.xnb</Output>
+      <Time>2013-03-22T14:28:40.44525-04:00</Time>
     </Item>
     <Item>
       <Source>moon1_32x32.png</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Nick\Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\bin\x86\Debug\Content\moon1_32x32.xnb</Output>
-      <Time>2013-03-13T14:52:58.882-04:00</Time>
+      <Output>C:\Documents and Settings\Student\My Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\bin\x86\Debug\Content\moon1_32x32.xnb</Output>
+      <Time>2013-03-22T14:28:40.44525-04:00</Time>
     </Item>
     <Item>
       <Source>planet1_64x64.png</Source>
@@ -61,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Nick\Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\bin\x86\Debug\Content\planet1_64x64.xnb</Output>
-      <Time>2013-03-13T14:52:58.884-04:00</Time>
+      <Output>C:\Documents and Settings\Student\My Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\bin\x86\Debug\Content\planet1_64x64.xnb</Output>
+      <Time>2013-03-22T14:28:40.44525-04:00</Time>
     </Item>
     <Item>
       <Source>SpriteFont1.spritefont</Source>
@@ -70,8 +70,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Nick\Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\bin\x86\Debug\Content\SpriteFont1.xnb</Output>
-      <Time>2013-03-13T14:52:58.88-04:00</Time>
+      <Output>C:\Documents and Settings\Student\My Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\bin\x86\Debug\Content\SpriteFont1.xnb</Output>
+      <Time>2013-03-22T14:28:40.429625-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -79,39 +79,39 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Nick\Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClientContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Nick\Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Nick\Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClientContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Nick\Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Documents and Settings\Student\My Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClientContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Documents and Settings\Student\My Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Documents and Settings\Student\My Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClientContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Documents and Settings\Student\My Documents\GitHub\Advanced-Game-Project\GameClient\GameClient\GameClient\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
         <Value>2010-08-23T13:41:18-04:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
         <Value>2010-08-23T13:41:18-04:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
         <Value>2010-08-23T13:41:18-04:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
         <Value>2010-08-23T13:41:18-04:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
         <Value>2010-08-23T13:41:18-04:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
         <Value>2010-08-23T13:41:18-04:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2013-01-21T23:12:43.971-05:00</Value>
+        <Key>C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2013-02-11T11:48:42.9375-05:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

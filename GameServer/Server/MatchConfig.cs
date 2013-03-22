@@ -11,8 +11,6 @@ using System.Text;
 /// that are set when the game initializes.  In later revisions of the game, these constants could be made to change based upon the map file. Presently they are static values.
 ///</remarks> 
 
-
-
 class MatchConfig
 
 {
@@ -23,10 +21,10 @@ class MatchConfig
     static public int maxPlayers = 2;
 
     //strength of gravity
-    static public float gravityConstant = (float)(-5);
+    static public float gravityConstant = (float)(-8);
 
     //base speed of bullets
-    static public int bulletSpeed = 7;
+    static public int bulletSpeed = 12;
 
     //reload speed for ships (Not currently in use)
     static public int reloadRate = 1;
