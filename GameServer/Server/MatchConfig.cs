@@ -17,6 +17,9 @@ class MatchConfig
     //static public List<Player> players = new List<Player>();
     //static public Map map;
 
+    //amount of energy lost for collisions
+    static public float collisionEnergy = (float)(0.60);
+
     //maximum number of players in the game
     static public int maxPlayers = 2;
 

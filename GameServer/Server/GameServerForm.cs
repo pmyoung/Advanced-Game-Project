@@ -128,20 +128,6 @@ namespace Server
             set { ownedby = value; }
         }
 
-        //Collision detection
-        /// <summary>
-        /// Check the collision between the bullet and a GameObject instance
-        /// </summary>
-        /// <param name="object2">An instance to a GameObject</param>
-        /// <returns>Bool, true if them colide, false otherwise</returns>
-        public bool checkCollision(GameObject object2)
-        {
-            if (this == object2) return false;
-            float distance = (float)(Math.Sqrt(Math.Pow((this.x - object2.x), 2) + Math.Pow(this.y - object2.y, 2)));
-            if (distance < this.radius + object2.radius) return true;
-            return false;
-        }
-
     }
 
     /// <summary>
@@ -151,9 +137,9 @@ namespace Server
     {
         string name;
         int bulletcount;
-        public int powerUpDuration;
-        public int reloadTime;
-        public string powerUpType;
+        public int powerUpDuration = 0;
+        public int reloadTime = 0;
+        public string powerUpType = "";
         //Get and sets for all variables
 
         public int bcount
@@ -167,18 +153,11 @@ namespace Server
             get { return name; }
             set { name = value; }
         }
-        
-        /// <summary>
-        /// In case a collison is detected, this function should be called to treat how a player instance will respond in collison with another object
-        /// </summary>
-        /// <param name="object2">An instance to a Planets</param>
-        public void treatCollision(Planets object2)
+
+        public void weaponTimer()
         {
-            if (object2 is Planets)
-            {
-                this.speedX = this.speedX * (float)(-0.25);
-                this.speedY = this.speedY * (float)(-0.25);
-            }
+            powerUpDuration--;
+            reloadTime--;
         }
         
         /// <summary>
@@ -187,12 +166,28 @@ namespace Server
         /// <param name="object2">An instance to a player</param>
         public void treatCollision(Player object2)
         {
-                //Give object that is being collided with the same speed but add the colliders speed to it to simulate a bounce.
-                object2.speedX = object2.speedX + (this.speedX * (float)(0.8));
-                object2.speedY = object2.speedY + (this.speedY * (float)(0.8));
-                //make the colliders' speed the reverse because of collision.
-                this.speedX = this.speedX * (float)(-0.25);
-                this.speedY = this.speedY * (float)(-0.25);
+                //Elastic head-on collision, both objects will reflect based on their respective masses
+                //http://hyperphysics.phy-astr.gsu.edu/%E2%80%8Chbase/colsta.html#c5
+                this.speedX = ((this.mass - object2.mass) / (object2.mass + this.mass)) * object2.speedX;
+                this.speedY = ((this.mass - object2.mass) / (object2.mass + this.mass)) * object2.speedY;
+                object2.speedX = ((2 * object2.mass) / (object2.mass + this.mass)) * this.speedX;
+                object2.speedY = ((2 * object2.mass) / (object2.mass + this.mass)) * this.speedY;
+                //Separate the two objects so the collision isn't detected multiple times
+                object2.x = object2.x + object2.speedX;
+                object2.y = object2.y + object2.speedY;
+                this.x = this.x + this.speedX;
+                this.y = this.y + this.speedY;
+        }
+        
+        public void treatCollision(Planets object2)
+        {
+            //"Massive target" collision, the player will reflect only, other object will not move
+            //http://hyperphysics.phy-astr.gsu.edu/%E2%80%8Chbase/colsta.html#c5
+            this.speedX = -this.speedX*MatchConfig.collisionEnergy;
+            this.speedY = -this.speedY*MatchConfig.collisionEnergy;
+            //Separate the two objects so the collision isn't detected multiple times
+            this.x = this.x + this.speedX;
+            this.y = this.y + this.speedY;
         }
     }
 
@@ -374,26 +369,7 @@ namespace Server
                     p.y += p.speedY;
 
                     //Collision Detection between Player and Border. For now, Players will bounce off the border in opposite direction.
-                    if (p.x < 0)
-                    {
-                        p.speedX = p.speedX * (float)(-0.1);
-                        p.x = 0;
-                    }
-                    else if (p.x > MatchConfig.mapWidth)
-                    {
-                        p.speedX = p.speedX * (float)(-0.1);
-                        p.x = MatchConfig.mapWidth;
-                    }
-                    if (p.y < 0)
-                    {
-                        p.speedY = p.speedY * (float)(-0.1);
-                        p.y = 0;
-                    }
-                    else if (p.y > MatchConfig.mapHeight)
-                    {
-                        p.speedY = p.speedY * (float)(-0.1);
-                        p.y = MatchConfig.mapHeight;
-                    }
+                    p.outOfBounds();
                     
                     //Collision Detection between Players. For now, Players will bounce off of each other. No damage to players.
                     foreach (Player p2 in playerList)
@@ -546,6 +522,7 @@ namespace Server
                             clientList.Add(clientInfo);
                             player1.x = 100;
                             player1.y = 100;
+                            player1.mass = 1;
                             player1.radius = 16;
                             player1.playername = msgReceived.strName;
                             player1.id = playercount;

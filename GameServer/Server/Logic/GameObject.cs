@@ -59,7 +59,7 @@ namespace Server
         /// <remarks>Collision detection is based upon the radius of the objects and the distance between them.</remarks>
         public virtual bool checkCollision(GameObject object2)
         {
-            //if (this == object2) return false;
+            if (this == object2) return false;
             float distance = (float)(Math.Sqrt(Math.Pow((this.x - object2.x), 2) + Math.Pow(this.y - object2.y, 2)));
             if (distance < this.radius + object2.radius) return true;
             return false;
@@ -69,23 +69,23 @@ namespace Server
         {
             if (x < 0)
             {
-                this.speedX = this.speedX * (float)(-0.1);
-                this.x = 0;
+                this.speedX = -this.speedX * MatchConfig.collisionEnergy;
+                this.x = this.x + this.speedX;
             }
             else if (x > MatchConfig.mapWidth)
             {
-                this.speedX = this.speedX * (float)(-0.1);
-                this.x = MatchConfig.mapWidth;
+                this.speedX = -this.speedX * MatchConfig.collisionEnergy;
+                this.x = this.x + this.speedX;
             }
             if (y < 0)
             {
-                this.speedY = this.speedY * (float)(-0.1);
-                this.y = 0;
+                this.speedY = -this.speedY * MatchConfig.collisionEnergy;
+                this.y = this.y + this.speedY;
             }
             else if (y > MatchConfig.mapHeight)
             {
-                this.speedY = this.speedY * (float)(-0.1);
-                this.y = MatchConfig.mapHeight;
+                this.speedY = -this.speedY * MatchConfig.collisionEnergy;
+                this.y = this.y + this.speedY;
             }
         }
 
