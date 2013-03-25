@@ -28,19 +28,23 @@ namespace GameGraphics
         /// <param name="obj">The object that needs to be updated</param>
         public void Update(GraphicsObject obj)
         {
-            GraphicsObject value;
-            if (this.dictionary.TryGetValue(obj.GetID(), out value))
+            if (obj != null) // we actually have an object
             {
-                // we have it so we just need to update it
-                value.SetX(obj.GetX());
-                value.SetY(obj.GetY());
-                value.SetAngle(obj.GetAngle());
+                GraphicsObject value;
+                if (this.dictionary.TryGetValue(obj.GetID(), out value))
+                {
+                    // we have it so we just need to update it
+                    value.SetX(obj.GetX());
+                    value.SetY(obj.GetY());
+                    value.SetAngle(obj.GetAngle());
+                }
+                else
+                {
+                    // we dont have it so we need to add it
+                    this.dictionary.Add(obj.GetID(), obj);
+                }
             }
-            else
-            {
-                // we dont have it so we need to add it
-                this.dictionary.Add(obj.GetID(), obj);
-            }
+            
         }// Update
 
         ///<summary>When called will return a reference to the dictionary it uses</summary>
