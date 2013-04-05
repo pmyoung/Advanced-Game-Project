@@ -18,11 +18,6 @@ namespace GameGraphics
             particleList = new Particle[numParticles];
         }
 
-        public void Add(Particle p)
-        {
-            
-        }
-
         public void Update(GameTime gametime)
         {
             for (int p = 0; p < numParticles; p++)
