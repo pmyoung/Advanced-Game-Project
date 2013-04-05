@@ -13,30 +13,13 @@ namespace GameGraphics
     /// <summary>
     /// 
     /// </summary>
-    public class GraphicsObject
+    public class GraphicsObject : AbstractGraphicEntity
     {
-        // this color will be used by default if the color is set to it or an invalid ID is given
-        private static int DEFAULT_COLOR = 0;
-
-        ///Player 1 = light coral "red"
-        ///Player 2 = light blue "blue"
-        ///Player 3 = lime "green"
-        ///Player 4 = yellow "yellow"
-        ///Player 5 = cyan "cyan"
-        ///Player 6 = orange "orange"
-        ///Player 7 = medium purple "purple"
-        ///Player 8 = pink "pink"
-        ///Everything else will use white (a non altered sprite color)
-        private static Color[] COLOR = { Color.White, Color.LightCoral, Color.LightBlue, Color.Lime, Color.Yellow, Color.Cyan, Color.Orange, Color.MediumPurple, Color.Pink };
 
         private int id;
-        private int spriteID;
-        private Color color;
-        
-        private float x;
-        private float y;
-        private float radius;
-        private float angle;
+        private int score;
+        private int health;
+        private ParticleSet particles;
 
         ///<summary>This constructor creates a GraphicsObject with all its parameters defined with values</summary>
         ///<param name="id">the ID of the object this should be unique</param>
@@ -47,14 +30,9 @@ namespace GameGraphics
         ///<param name="spriteID">the ID of the sprite the object uses</param>
         ///<param name="colorID">the ID of the color it wil have (used for the player sprites)</param>
         public GraphicsObject(int id, float x, float y, float radius, float angle, int spriteID, int colorID)
+            : base(x, y, radius, angle, spriteID, colorID)
         {
             this.SetID(id);
-            this.SetX(x);
-            this.SetY(y);
-            this.SetRadius(radius);
-            this.SetAngle(angle);
-            this.SetSpriteID(spriteID);
-            this.SetColor(colorID);
         }// GraphicsObject
 
         ///<summary>Constructor that accepts all but the colorID as parameters. This is usefull
@@ -66,15 +44,10 @@ namespace GameGraphics
         ///<param name="radius">the radius of the object</param>
         ///<param name="angle">the angle of the object</param>
         ///<param name="spriteID">the ID of the sprite the object uses</param>
-        public GraphicsObject(int id, float x, float y, float radius, float angle, int spriteID)
+        public GraphicsObject(int id, float x, float y, float radius, float angle, int spriteID) 
+            : base(x, y, radius, angle, spriteID)
         {
             this.SetID(id);
-            this.SetX(x);
-            this.SetY(y);
-            this.SetRadius(radius);
-            this.SetAngle(angle);
-            this.SetSpriteID(spriteID);
-            this.SetColor(DEFAULT_COLOR);
         }// GraphicsObject
 
         /// <summary>Constructor that creates an object with all parameters defined.
@@ -88,14 +61,9 @@ namespace GameGraphics
         ///<param name="spriteID">the ID of the sprite the object uses</param>
         /// <param name="color">The color object that will be used to change the sprites color</param>
         public GraphicsObject(int id, float x, float y, float radius, float angle, int spriteID, Color color)
+            : base(x, y, radius, angle, spriteID, color)
         {
             this.SetID(id);
-            this.SetX(x);
-            this.SetY(y);
-            this.SetRadius(radius);
-            this.SetAngle(angle);
-            this.SetSpriteID(spriteID);
-            this.SetColor(color);
         }// GraphicsObject
 
         ///<summary>Sets the ID of the GraphicsObject</summary>
@@ -105,65 +73,6 @@ namespace GameGraphics
             this.id = id;
         }// SetID
 
-        ///<summary>Sets the X location of the GraphicsObject</summary>
-        ///<param name="x">the X location to be given to the object</param>
-        public void SetX(float x)
-        {
-            this.x = x;
-        }// SetX
-
-        ///<summary>Sets the Y location of the GraphicsObject</summary>
-        ///<param name="y">the Y location to be given to the object</param>
-        public void SetY(float y)
-        {
-            this.y = y;
-        }// SetY
-
-        ///<summary>Sets the radius of the GraphicsObject</summary>
-        ///<param name="r">the radius to be given to the object</param>
-        public void SetRadius(float r)
-        {
-            this.radius = r;
-        }// SetRadius
-
-        ///<summary>Sets the angle of the GraphicsObject</summary>
-        ///<param name="a">the angle to be given to the object</param>
-        public void SetAngle(float a)
-        {
-            this.angle = a%360;
-        }// SetAngle
-
-        ///<summary>Sets the spriteID which will determine what sprite will be used
-        ///for this object</summary>
-        ///<param name="spriteID">the ID of the sprite to be used</param>
-        public void SetSpriteID(int spriteID)
-        {
-            this.spriteID = spriteID;
-        }// SetSpriteID
-
-        /// <summary> Sets the color that the GraphicsObject will use.</summary>
-        /// <param name="color">The color that will be used</param>
-        public void SetColor(Color color)
-        {
-            this.color = color;
-        }
-
-        ///<summary>Sets the color of the GraphicsObject based on a predefined list of ID's.
-        ///If the ID is not in the range of the colorID's then it will use the
-        ///default (White)</summary>
-        ///<param name="colorID">the ID value of the color to be used</param>
-        public void SetColor(int colorID)
-        {
-            if (colorID > 0 && colorID < COLOR.Length)
-            {
-                this.SetColor(COLOR[colorID]);
-            }
-            else // if we get a value that is not in our range make it white
-            {
-                this.SetColor(COLOR[DEFAULT_COLOR]);
-            }
-        }// SetColorID
-
         ///<summary>Returns the objects unique ID.</summary>
         ///<returns>Returns the objects unique ID</returns>
         public int GetID()
@@ -171,61 +80,34 @@ namespace GameGraphics
             return this.id;
         }// GetID
 
-        ///<summary>Returns the given X location</summary>
-        ///<returns>Returns the given X location</returns>
-        public float GetX()
+        public void SetScore(int score)
         {
-            return this.x;
-        }// GetX
+            this.score = score;
+        }
 
-        ///<summary>Returns the given Y location</summary>
-        ///<returns>Returns the given Y location</returns>
-        public float GetY()
+        public int GetScore()
         {
-            return this.y;
-        }// GetY
+            return this.score;
+        }
 
-        ///<summary>Returns the given radius of the object</summary>
-        ///<returns>Returns the given radius of the object</returns>
-        public float GetRadius()
+        public void SetHealth(int health){
+            this.health = health;
+        }
+
+        public int GetHealth()
         {
-            return this.radius;
-        }// GetRadius
+            return this.health;
+        }
 
-        ///<summary>Returns the given angle of the object</summary>
-        ///<returns>Returns the given angle of the object</returns>
-        public float GetAngle()
+        public void SetParticleSet(ParticleSet particles)
         {
-            return this.angle;
-        }// GetAngle
+            this.particles = particles;
+        }
 
-        ///<summary>Returns the given sprite ID of the object</summary>
-        ///<returns>Returns the given sprite ID of the object</returns>
-        public int GetSpriteID()
+        public ParticleSet GetParticleSet()
         {
-            return this.spriteID;
-        }// GetSpriteID
-
-        ///<summary>Returns the given color ID of the object</summary>
-        ///<returns>Returns the given color ID of the object</returns>
-        public int GetColorID()
-        {
-            for (int i = 0; i < COLOR.Length; i++)
-            {
-                if (this.GetColor().Equals(COLOR[i])){
-                    return i; // found it
-                }
-            }
-
-            return -1; // this is a unique color
-        }// GetColorID
-
-        ///<summary>Returns the actual color that this sprite will be using</summary>
-        ///<returns>Returns the colorID as a Color object</returns>
-        public Color GetColor()
-        {
-            return color;
-        }// GetColor
+            return this.particles;
+        }
 
     }// GrahicsObject
 }

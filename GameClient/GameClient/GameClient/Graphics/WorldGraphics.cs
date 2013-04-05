@@ -19,6 +19,15 @@ namespace GameGraphics
         private GraphicsModel model;
         private SpriteStore store;
 
+        public void Update(GameTime gametime)
+        {
+            List<GraphicsObject> list = model.GetAsList();
+            for (int i = 0; i < list.Count; i++)
+            {
+                list[i].GetParticleSet().Update(gametime);
+            }
+        }
+
         ///<summary>Renders the game world this method is called during the games
         /// Draw method.</summary>
         /// <param name="spriteBatch">Contains graphics contexts for rendering on the game screen</param>
