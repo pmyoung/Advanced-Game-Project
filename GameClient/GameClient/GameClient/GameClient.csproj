@@ -123,8 +123,11 @@
     <Compile Include="ClientSideMenu.Designer.cs">
       <DependentUpon>ClientSideMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Graphics\AbstractGraphicEntity.cs" />
     <Compile Include="Graphics\GraphicsModel.cs" />
     <Compile Include="Graphics\GraphicsObject.cs" />
+    <Compile Include="Graphics\Particle.cs" />
+    <Compile Include="Graphics\ParticleSet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Game1.cs" />
