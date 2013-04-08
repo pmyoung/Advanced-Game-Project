@@ -20,6 +20,7 @@ namespace GameGraphics
         private int score;
         private int health;
         private ParticleSet particles;
+        private Boolean updated;
 
         ///<summary>This constructor creates a GraphicsObject with all its parameters defined with values</summary>
         ///<param name="id">the ID of the object this should be unique</param>
@@ -33,6 +34,20 @@ namespace GameGraphics
             : base(x, y, radius, angle, spriteID, colorID)
         {
             this.SetID(id);
+            this.SetParticleSet(new ParticleSet());
+            this.SetScore(0);
+            this.SetHealth(0);
+            this.IsUpdated(true);
+        }// GraphicsObject
+
+        public GraphicsObject(int id, float x, float y, float radius, float angle, int spriteID, int colorID, int health, int score)
+            : base(x, y, radius, angle, spriteID, colorID)
+        {
+            this.SetID(id);
+            this.SetParticleSet(new ParticleSet());
+            this.SetScore(score);
+            this.SetHealth(health);
+            this.IsUpdated(true);
         }// GraphicsObject
 
         ///<summary>Constructor that accepts all but the colorID as parameters. This is usefull
@@ -48,6 +63,10 @@ namespace GameGraphics
             : base(x, y, radius, angle, spriteID)
         {
             this.SetID(id);
+            this.SetParticleSet(new ParticleSet());
+            this.SetScore(0);
+            this.SetHealth(0);
+            this.IsUpdated(true);
         }// GraphicsObject
 
         /// <summary>Constructor that creates an object with all parameters defined.
@@ -64,7 +83,23 @@ namespace GameGraphics
             : base(x, y, radius, angle, spriteID, color)
         {
             this.SetID(id);
+            this.SetParticleSet(new ParticleSet());
+            this.SetScore(0);
+            this.SetHealth(0);
+            this.IsUpdated(true);
         }// GraphicsObject
+
+        public GraphicsObject(int id, float x, float y, float radius, float angle, int spriteID, Color color, int health, int score)
+            : base(x, y, radius, angle, spriteID, color)
+        {
+            this.SetID(id);
+            this.SetParticleSet(new ParticleSet());
+            this.SetScore(score);
+            this.SetHealth(health);
+            this.IsUpdated(true);
+        }// GraphicsObject
+
+        
 
         ///<summary>Sets the ID of the GraphicsObject</summary>
         ///<param name="id">the id to be given to the object</param>
@@ -107,6 +142,16 @@ namespace GameGraphics
         public ParticleSet GetParticleSet()
         {
             return this.particles;
+        }
+
+        public void IsUpdated(Boolean yes)
+        {
+            this.updated = yes;
+        }
+
+        public Boolean HasUpdated()
+        {
+            return this.updated;
         }
 
     }// GrahicsObject

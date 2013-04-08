@@ -78,8 +78,8 @@ namespace GameGraphics
 
         ///<summary>Renders the given GraphicsObject</summary>
         ///<param name="spriteBatch">Contains graphics contexts for rendering on the game screen</param>
-        ///<param name="obj">The GraphicsObject that is to be rendered</param>
-        public void Render(SpriteBatch spriteBatch, GraphicsObject obj)
+        ///<param name="obj">The AbstractGraphicEntity that is to be rendered</param>
+        public void Render(SpriteBatch spriteBatch, AbstractGraphicEntity obj)
         {
             this.Render(spriteBatch, (int)obj.GetX(), (int)obj.GetY(), (int)obj.GetRadius(), obj.GetColor(), (int)obj.GetAngle(), 0.0f, 0, 0);
         }// Render

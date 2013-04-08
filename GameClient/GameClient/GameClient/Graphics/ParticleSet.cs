@@ -9,31 +9,52 @@ namespace GameGraphics
 {
     public class ParticleSet
     {
-        private int index = 0;
-        private int numParticles = 100;
+        public static int NUM_PARTICLES = 100;
+
+        private int index;
         private Particle[] particleList;
 
         public ParticleSet()
         {
-            particleList = new Particle[numParticles];
+            this.SetIndex(0);
+            particleList = new Particle[NUM_PARTICLES];
+        }
+
+        public void AddParticle(Particle p)
+        {
+            particleList[index] = p;
+            index = (index + 1) % NUM_PARTICLES;
+        }
+
+        public Particle GetParticle(int index)
+        {
+            if (index < NUM_PARTICLES)
+            {
+                return this.particleList[index];
+            }
+
+            return null;
         }
 
         public void Update(GameTime gametime)
         {
-            for (int p = 0; p < numParticles; p++)
+            for (int p = 0; p < NUM_PARTICLES; p++)
             {
-                
+                if (this.particleList[p] != null)
+                {
+                    this.particleList[p].Update(gametime);
+                }
             }
         }
 
-        public void SetNumParticles(int numParticles)
+        public void SetIndex(int index)
         {
-            this.numParticles = numParticles;
+            this.index = index;
         }
 
-        public int GetNumParticles()
+        public int GetIndex()
         {
-            return this.numParticles;
+            return this.index;
         }
     }
 }

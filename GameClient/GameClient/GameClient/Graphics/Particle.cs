@@ -7,11 +7,24 @@ using Microsoft.Xna.Framework;
 
 namespace GameGraphics
 {
-    class Particle : AbstractGraphicEntity
+    public class Particle : AbstractGraphicEntity
     {
-        private float velocityX;
-        private float velocityY;
+        private static float LIFE_TIME = 500;
+
+        private float velocity = 0.075f;
         private float ttl;
+
+        public Particle(float x, float y, float radius, float angle, int spriteID)
+            : base(x, y, radius, angle, spriteID)
+        {
+            this.SetTTL(LIFE_TIME);
+        }
+
+        public Particle(float x, float y, float radius, float angle, int spriteID, Color color)
+            : base(x, y, radius, angle, spriteID, color)
+        {
+            this.SetTTL(LIFE_TIME);
+        }
 
         public Particle(float ttl, float x, float y, float radius, float angle, int spriteID)
             : base(x, y, radius, angle, spriteID)
@@ -29,8 +42,12 @@ namespace GameGraphics
         {
             float delta = (float)(gametime.ElapsedGameTime.TotalMilliseconds);
             this.SetTTL(this.GetTTL() - delta);
-            this.SetX(this.GetX() + this.GetVelocityX() * delta);
-            this.SetY(this.GetY() + this.GetVelocityY() * delta);
+            float rotation = (float)((Math.PI / 180.0) * this.GetAngle());
+            float dirX = (float)Math.Sin(rotation);
+            float dirY = (float)Math.Cos(rotation);
+
+            this.SetX(this.GetX() + (this.GetVelocity() * dirX * delta));
+            this.SetY(this.GetY() - (this.GetVelocity() * dirY * delta));
         }
 
         public Boolean isAlive()
@@ -38,24 +55,14 @@ namespace GameGraphics
             return (this.ttl > 0);
         }
 
-        public void SetVelocityX(float velocityX)
+        public void SetVelocity(float velocity)
         {
-            this.velocityX = velocityX;
+            this.velocity = velocity;
         }
 
-        public float GetVelocityX()
+        public float GetVelocity()
         {
-            return this.velocityX;
-        }
-
-        public void SetVelocityY(float velocityY)
-        {
-            this.velocityY = velocityY;
-        }
-
-        public float GetVelocityY()
-        {
-            return this.velocityY;
+            return this.velocity;
         }
 
         public void SetTTL(float ttl)

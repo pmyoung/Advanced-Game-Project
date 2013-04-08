@@ -120,7 +120,7 @@ namespace GameGraphics
         ///<param name="a">the angle to be given to the object</param>
         public void SetAngle(float a)
         {
-            this.angle = a % 360;
+            this.angle = (a % 360);
         }// SetAngle
 
         ///<summary>Sets the spriteID which will determine what sprite will be used

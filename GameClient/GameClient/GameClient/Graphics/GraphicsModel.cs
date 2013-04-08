@@ -33,19 +33,39 @@ namespace GameGraphics
                 GraphicsObject value;
                 if (this.dictionary.TryGetValue(obj.GetID(), out value))
                 {
+                    // add particle
+                    if (value.GetX() != obj.GetX() || value.GetY() != obj.GetY())
+                    {
+                        value.GetParticleSet().AddParticle(new Particle(value.GetX(), value.GetY(), 4, value.GetAngle()+180, 101, value.GetColor()));
+                    }
                     // we have it so we just need to update it
                     value.SetX(obj.GetX());
                     value.SetY(obj.GetY());
                     value.SetAngle(obj.GetAngle());
+                    value.IsUpdated(true);
                 }
                 else
                 {
                     // we dont have it so we need to add it
+                    obj.IsUpdated(true);
                     this.dictionary.Add(obj.GetID(), obj);
                 }
             }
             
         }// Update
+
+        public void CleanUp()
+        {
+            List<GraphicsObject> list = this.GetAsList();
+
+            for (int l = 0; l < list.Count; l++)
+            {
+                if (!list[l].HasUpdated())
+                {
+                    this.Remove(list[l].GetID());
+                }
+            }
+        }// CleanUp
 
         ///<summary>When called will return a reference to the dictionary it uses</summary>
         ///<returns>returns the stored dictionary</returns>

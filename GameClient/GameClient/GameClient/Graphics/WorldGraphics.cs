@@ -37,6 +37,17 @@ namespace GameGraphics
             List<GraphicsObject> list = model.GetAsList();
             for (int i = 0; i < list.Count; i++)
             {
+                ParticleSet ps = list[i].GetParticleSet();
+                for (int p = 0; p < ParticleSet.NUM_PARTICLES; p++)
+                {
+                    if (ps.GetParticle(p) != null)
+                    {
+                        if (ps.GetParticle(p).isAlive())
+                        {
+                            this.GetSpriteStore().GetSprite(ps.GetParticle(p).GetSpriteID()).Render(spriteBatch, ps.GetParticle(p));
+                        }
+                    }
+                }
                 this.GetSpriteStore().GetSprite(list[i].GetSpriteID()).Render(spriteBatch, list[i]);
             }
         }// Render
